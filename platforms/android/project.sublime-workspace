@@ -1,0 +1,385 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getDiscount"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"month",
+				"monthTelecomPrice"
+			],
+			[
+				"getT",
+				"getTelecomTex"
+			],
+			[
+				"getTe",
+				"getTelecomPrice"
+			],
+			[
+				"gett",
+				"getTelecom"
+			],
+			[
+				"select",
+				"selectModel"
+			],
+			[
+				"getM",
+				"getModel"
+			],
+			[
+				"data",
+				"dataType"
+			],
+			[
+				"item",
+				"item_type"
+			],
+			[
+				"sele",
+				"selectTelecom"
+			],
+			[
+				"btn",
+				"btnCafeGo"
+			],
+			[
+				"input",
+				"inputCode"
+			],
+			[
+				"h",
+				"height	Attr"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"bott",
+				"margin-bottom"
+			],
+			[
+				"top",
+				"margin-top"
+			],
+			[
+				"setTotal",
+				"setTotalMonthPrice"
+			],
+			[
+				"modalTotal",
+				"modalTotalMonthPrice"
+			],
+			[
+				"insertMonth",
+				"insertMonthTelcom"
+			],
+			[
+				"modalMonth",
+				"modalMonthTelecom"
+			],
+			[
+				"modalM",
+				"modalMonth"
+			],
+			[
+				"supp",
+				"support"
+			],
+			[
+				"c",
+				"class	Attr"
+			],
+			[
+				"se",
+				"selectCharge"
+			],
+			[
+				"selec",
+				"selectTelecom"
+			],
+			[
+				"fa",
+				"fadeOut"
+			],
+			[
+				"Mod",
+				"ModelCode"
+			],
+			[
+				"su",
+				"supportPrice"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"jsonp",
+				"jsonpCallback"
+			],
+			[
+				"lo",
+				"loading"
+			],
+			[
+				"j",
+				"json"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"or",
+				"origin_price"
+			],
+			[
+				"MO",
+				"MODELCODE"
+			],
+			[
+				"sel",
+				"selectModel"
+			],
+			[
+				"te",
+				"telecom_click"
+			],
+			[
+				"com",
+				"company_click"
+			],
+			[
+				"tele",
+				"Telecom"
+			],
+			[
+				"T",
+				"Telecom"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"op",
+				"option	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/consult.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/consulter.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/first_sale.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/sale.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/sale_code.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/sale_main.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/sale_main_consult.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/totalincentive.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/self.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/btn_homeback.js",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/my_phonegap.js",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/homaback.js",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/main.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/css/jong_style.css",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/index.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/basic.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/images/open_bg.png",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/hello/platforms/android/assets/www/index.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/mystyle.js",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/mygcm.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/AndroidManifest.xml",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/www/gcm_test.html",
+		"/Users/WizardCode/Documents/My_Work/PhoneGap/hello/platforms/android/assets/www/gcm.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/sale_main.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/sale.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/consult.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/first_sale.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/main.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/sale_code.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/self.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/totalincentive.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/basic.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/consulter.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/index.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/sale_main_consult.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/sqltest.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/css/jong_style.css",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/my_sale.html",
+		"/Users/WizardCode/Documents/My_Work/www/netcat/header.html",
+		"/Users/WizardCode/Documents/My_Work/www/testcode/ajax_loading/index.html",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/json/phone.json",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/js/jqueryui_datepicker_kr.js",
+		"/Users/WizardCode/Documents/My_Work/www/_phonepaly_/jquery.js",
+		"/Users/WizardCode/Documents/My_Work/www/phonepaly",
+		"/Users/WizardCode/Documents/My_Work/www/ottcat/application/config/config.php",
+		"/Users/WizardCode/Documents/My_Work/www/ottcat/application/config/autoload.php",
+		"/Users/WizardCode/Documents/My_Work/www/ottcat/application/.htaccess",
+		"/Users/WizardCode/Documents/My_Work/www/.htaccess",
+		"/Users/WizardCode/Documents/My_Work/www/ottcat/<IfModule mod_rewrite.c>",
+		"/Users/WizardCode/Documents/My_Work/www/avantbook/sutra/zen/index.php",
+		"/Users/WizardCode/Documents/My_Work/www/avantbook/sutra/zen/enContent.html",
+		"/Users/WizardCode/Documents/My_Work/www/index.php",
+		"/Users/WizardCode/Documents/My_Work/www/avantbook/books/tmp.html",
+		"/Users/WizardCode/Documents/My_Work/www/avantbook/index.html",
+		"/Users/WizardCode/Documents/My_Work/www/avantbook/index.php",
+		"/Users/WizardCode/Documents/My_Work/www/my_project.sublime-project"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"http://addingfriends.net/phonecooker/"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"http://rubicone.cafe24.com/phonecooker/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 206.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
