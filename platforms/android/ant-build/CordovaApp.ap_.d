@@ -104,6 +104,7 @@
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/star-rating \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/btn_homeback.js \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/my_phonegap.js \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/my_validate.js \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/sale.js \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/my/self.js \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/js/star-rating/delete.gif \
