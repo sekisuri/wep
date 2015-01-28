@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Phone Cooker</title>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	
+    <link rel="stylesheet" href="css/jong_style.css">    
+
+    <script src="cordova.js" type="text/javascript"></script>
+    <script src="js/my/my_phonegap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$("#btnEvent").click(function(){
+    		alert("준비중");
+    	});
+    });
+    </script>
+  
+</head>
+<body>
+	<div class="cbody">
+		<div id="header">
+			
+			
+
+			<h1><a href="#">Phone Cooker</a></h1>
+			
+		</div>
+		<div class="main_contents">
+			<div class="main contents title" class="btnImage">
+				<h4> 호갱 탈출 하실분 !!</h4>
+			</div>
+			<div>
+				<div id="clickSelf" class="btnImage">
+				<a href="self.html">
+					<button class="btn btn-success btn-lg btn-block">
+						셀프 컨설팅 해보기
+					</button>
+				</a>
+				</div>
+			</div>
+			<div>
+				<div class="btnImage" id="btnEvent">
+					<button class="btn btn-success btn-lg btn-block">
+						행사 상품 보기
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="main_contents">
+			<div class="main contents title" class="btnImage">
+				<h4> 호객 탈출 시켜 주실분!!</h4>
+			</div>
+			
+			<div>
+				<div class="btnImage" data-toggle="modal" data-target="#clickSale" id="btnSale">
+					<button class="btn btn-success btn-lg btn-block">
+						휴대폰 판매하기
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	
+
+	<!-- Modal -->
+	<div class="modal fade" id="clickSale" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title"></h4>
+				</div>
+				<div class="modal-body">
+						
+					<h3>처음 이신가요?</h3>
+						
+				</div>
+				<div class="modal-footer">
+					<div class="wall">
+					<a href="first_sale.html">
+						<button type="button" class="btn btn-success btn-lg">
+							 예
+						</button>
+					</a>
+					<a href="sale_code.html">
+						<button type="button" class="btn btn-default btn-lg">아니요</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+		
+</body>
+</html>

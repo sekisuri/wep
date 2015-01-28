@@ -1,0 +1,190 @@
+@charset "utf-8";
+ 
+@font-face {
+	font-family:NanumGothic;
+	src:url('../font/NANUMGOTHICBOLD.TTF');
+	src:local('☺'), 
+	     url('../font/NANUMGOTHICBOLD.TTF');
+}
+a {
+   text-decoration: none;
+}
+body { 
+    background-color: #edf4e1; /* Background color */
+    color: #222;          /* Foreground color used for text */
+    font-family: NanumGothic; 
+    margin: 0;             /* Amount of negative space around the outside of the body */
+    padding: 0;               /* Amount of negative space around the inside of the body */
+   /*background-image:url('../images/bg.png');*/
+}
+
+.openingBox .Text {
+    margin-top: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10;
+
+}
+header {
+	
+}
+.cbody {
+    margin:0 auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float:center;
+    text-align:center;
+	
+}
+.main_contents {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:80%;
+    height:80%;
+    margin-top:5%;
+    margin-bottom:5%;
+    background-color: #eeeeee;
+   /* border: 5px solid #379d38;*/
+    /*background-image:url('../images/content_bg.png');*/
+}
+.main_contents .title {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:80%;
+    height:80%;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+.contents {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:80%;
+    height:80%;
+    margin-top:5%;
+    margin-bottom:5%;
+    border: 5px solid #eeeeee;
+    background-color: #eeeeee;
+
+   /* background-image:url('../images/content_bg.png');*/
+}
+
+.btnImage{
+    
+    padding: 10px;
+}
+#wrap {
+	margin:0 auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-image:url('images/content_bg.png');
+} 
+
+.closeButton {
+	margin: 0;
+    padding: 0;   
+   	text-align: center;
+    -webkit-border-image: url('images/close_button.png') 0 8 0 8;
+}
+.closeButton a{
+	height: 30px;
+  	font-weight: bold;
+    color: white;
+    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
+    line-height: 28px;
+    border-width: 0 8px 0 8px;
+	    text-decoration:none;	
+}
+#header h1 { 
+    margin: 0;
+    padding: 0;
+} 
+#header h1 a {
+    background-color: #ccc; 
+    border-bottom: 1px solid #666;
+    color: #444;
+    display:block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+}
+#header h1 a {
+    text-shadow: 0px 1px 1px #fff;
+    height:10%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#abce68), to(#d7e5d7));
+}
+#header button{
+  width: 100%;
+  float: left;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background-color: #ddd;
+  border-top: 3px solid #888;
+  border-left: 3px solid #888;
+  border-bottom: 3px solid #444; 
+  border-right: 3px solid #444;
+  -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+}
+#header div.rightButton {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
+    line-height: 28px;
+    border-width: 0 8px 0 8px;
+    -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+}
+#header div.pressed {
+    -webkit-border-image: url(images/button_clicked_msn.png) 0 8 0 8;
+}
+#header div.leftButton {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
+    line-height: 28px;
+    border-width: 0 8px 0 8px;
+    -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+}
+#header div.leftButton a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+#content{
+    float:center;
+    text-align:center;
+}
+#time{
+	display:none;
+}
+
+#footer {
+    display: none;
+}
+
+
+
