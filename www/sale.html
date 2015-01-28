@@ -13,9 +13,10 @@
 
   <!--  <script src="cordova.js" type="text/javascript"></script>
    <script src="js/my/my_phonegap.js" type="text/javascript"></script>
-    <script src="js/my/btn_homeback.js" type="text/javascript"></script>   -->
+    <script src="js/my/btn_homeback.js" type="text/javascript"></script>  
+        <script src="js/my/my_validate.js" type="text/javascript"></script>
+ -->
     <script src="js/my/sale.js" type="text/javascript"></script>
-    <script src="js/my/my_validate.js" type="text/javascript"></script>
 
    
 
@@ -215,12 +216,12 @@
 			<!-- <div class="well"> -->
 
 			<!-- Button trigger modal -->
-			<button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" id="btnModal">
+			<button class="btn btn-success btn-lg btn-block" id="btnModal">
 				판매 수수료 확인
 			</button>
 
 			<!-- Modal -->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="myModal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -228,13 +229,30 @@
 							<h4 class="modal-title">월 청구금액</h4>
 						</div>
 						<div class="modal-body">
-							
+							<div class="row">
+								<div class="col-xs-6">
+									<input class="form-control" id="inputCode" type="text">
+								</div>
+								<div class="col-xs-6">
+									<button type="button" class="btn btn-default" id="btnCode">확인</button>
+								</div>
+							</div>
+								<!--sekisuri_150129 수수료 모달   //START-->
+								<div id="showIncentive">
+									<div class="col-xs-8">
+									<input class="form-control" id="inputCode" type="text">
+								</div>
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-default" id="btnCode">확인</button>
+								</div>
+								</div><!-- <div id="showIncentive"> -->
+								<!--sekisuri_150129 수수료 모달   END//-->
 							<div class="panel panel-success">
 								<!-- Default panel contents -->
 								<div class="panel-heading" id="price_header"></div>
-
+								<div class="table-responsive">
 								<!-- Table -->
-								<table class="table">
+								<table class="table" class="modal_font">
 									<tr>
 										<!--유형 -->
 										<td>
@@ -339,6 +357,7 @@
 										<!-- 월납부금 끝 -->
 									</tr>
 								</table>
+								</div>
 							</div>
 							<!-- <div class="panel panel-success"> -->
 							<!-- 판매 수수료 -->
@@ -382,6 +401,8 @@
 				<!-- /.modal-dialog -->
 			</div>
 			<!-- /.modal -->
+
+		
 		</div> 
 		<!--<div class="panel-body">-->
 	</div>

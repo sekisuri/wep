@@ -2,6 +2,44 @@ $(document).ready(function(){
 	$("#saleFail").hide();
 	$("#loading").hide();	
 
+	$("#btnModal").click(function(){
+		$("#myModal").modal('show');
+	});
+
+	//sekisuri_150129   <START
+	$("#btnCode").click(function(){
+		var getCode = $("#inputCode").val();
+		var getIncentive = window.localStorage['판매_수수료'];
+		$.ajax({
+			url:"http://rubicone.cafe24.com/phonecooker/q.php?qdata=user",
+			dataType: 'jsonp',
+			jsonpCallback:'callback',
+			success:function(data){
+				$.each(data,function(key,val){
+					
+					if(val.아이디 == getCode)
+					{
+						$('#showIncentive').modal('show');
+					}														
+					else
+					{
+					//	$("#inputColor").addClass("form-group has-error");
+						$("#inputCode").val('');
+						$("#inputCode").attr("placeholder", "판매사코드가 틀립니다.");
+					}
+				});
+			}
+		});
+	});
+	//sekisuri_150129   <END
+
+	//sekisuri_   <START
+		$("#btnModalHide").click(function(){
+			$('#showIncentive').modal('hide');
+			
+		});
+	//sekisuri_   <END
+
 });
 
 $(document).ready(function(){
@@ -11,9 +49,9 @@ $(document).ready(function(){
 		var item_type = [];
 		var getTelecom = $("#selectTelecom option:selected").val();
 		item_type.push("<option value='none'>미선택</option>");
-		item_type.push("<option value=" + getTelecom + "신규>" + "신규 </option>");
-		item_type.push("<option value=" + getTelecom + "MNP>" + "번호이동 </option>");
-		item_type.push("<option value=" + getTelecom + "기변>" + "기기변경 </option>");
+		item_type.push("<option value=신규>신규</option>");
+		item_type.push("<option value=MNP>번호이동</option>");
+		item_type.push("<option value=기변>기기변경</option>");
 
 		$("#selectType").html(item_type.join(""));
 		$("#selectModel").val("none");
@@ -243,7 +281,8 @@ $(document).ready(function(){
 				$("#modalTelecomTex").html($.number(getTelecomTex) + "원");		//통신요금 부가세 -- 아직모름
 				//$("#modalTotalTelecom").html($.number(monthTelecomPrice) + "원")	//월 요금
 				$("#modalDiscount").html("-" + $.number(getDiscount) + "원  (요금할인 부가세 포함)"); // 할인 -- 요건 넣을지 말지 아직모름
-				$("#modalTotalMonthPrice").html("<strong>" + $.number(totalMonthPrice) + "원 </strong>");	// 월 납부금 --통신요금을 몰라서 우선 월 기기요금으로...
+				$("#modalTotalMonthPrice").html("<strong>" + $.number(totalMonthPrice) + "원 </strong>");	
+				// 월 납부금 --통신요금을 몰라서 우선 월 기기요금으로...
 
 				//getIncentive = window.localStorage['판매_수수료'];
 				//$("#modalIncentive").val($.number(getIncentive) + "원");

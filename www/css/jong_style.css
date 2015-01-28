@@ -28,6 +28,9 @@ body {
 header {
 	
 }
+#modal_font {
+  font-size: 10px;
+}
 .cbody {
     margin:0 auto;
     -webkit-border-radius: 10px;
@@ -82,13 +85,7 @@ header {
     
     padding: 10px;
 }
-#wrap {
-	margin:0 auto;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	background-image:url('images/content_bg.png');
-} 
+
 
 .closeButton {
 	margin: 0;
