@@ -32,7 +32,20 @@ $(document).ready(function(){
 			alert("할부개월을 선택하세요.");
 			return false;
 		}
+		$("#myModal").modal('show');
 
+	});
+	$("#btn_closeModal").click(function(){
+		$("#myModal").modal('hide');
+		$("#selectTelecom").val("none");
+		$("#selectType").val("none");
+		$("#selectModel").val("none");
+		$("#selectCharge").val("none");
 
+		//가격 리셋 
+		$("#origin_price").val("");
+		$("#support_charge").val("");
+		$("#final_price").val("");
+		$("#selectInstalment").val("none");
 	});
 });
