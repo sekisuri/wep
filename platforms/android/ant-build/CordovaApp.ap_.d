@@ -1,5 +1,6 @@
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/CordovaApp.ap_ \
  : /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable/icon.png \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-hdpi/icon.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-land-hdpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-land-ldpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-land-mdpi/screen.png \
@@ -8,9 +9,11 @@
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-port-ldpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-port-mdpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-port-xhdpi/screen.png \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/drawable-xxhdpi/icon.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/values/strings.xml \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/res/xml/config.xml \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable/icon.png \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-hdpi/icon.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-land-hdpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-land-ldpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
@@ -19,9 +22,11 @@
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-port-ldpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-port-mdpi/screen.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/ant-build/res/drawable-xxhdpi/icon.png \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/_where-is-www.txt \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/basic.html \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/common \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/consult.html \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/consulter.html \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/cordova.js \
@@ -50,6 +55,7 @@
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/spec.html \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/sqltest.html \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/totalincentive.html \
+/Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/common/common_body.html \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/css/bootstrap-theme.css \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/css/bootstrap-theme.css.map \
 /Users/WizardCode/Documents/My_Work/PhoneGap/phonecooker/platforms/android/assets/www/css/bootstrap-theme.min.css \
