@@ -210,12 +210,12 @@
 			<!-- <div class="well"> -->
 
 			<!-- Button trigger modal -->
-			<button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" id="btnModal">
-				월 청구금액 확인하기
+			<button class="btn btn-success btn-lg btn-block" id="btnModal">
+				월 청구금액 확인
 			</button>
 
 			<!-- Modal -->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="myModal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -339,12 +339,12 @@
 						</div>
 						<div class="modal-footer">
 							<div class="wall">
-								<a href="consult.html">
-									<button type="button" class="btn btn-success btn-lg btn-block">
-										추가 할인받기 
-									</button>
-								</a>
-								<button type="button" class="btn btn-default btn-lg btn-block" data-dismiss="modal">다시 컨설팅</button>
+								<button type="button" class="btn btn-success btn-lg btn-block" id="btnAddDiscount">
+									추가 할인받기 
+								</button>
+								<button type="button" class="btn btn-default btn-lg btn-block" id="btn_closeModal">
+									다시 컨설팅
+								</button>
 							</div>
 						</div>
 					</div>
@@ -360,7 +360,10 @@
 
 
 	<script type="text/javascript">
-	
+		//sekisuri_ 추가할인 막아둠  <START
+		$("#btnAddDiscount").click(function(){
+			alert("준비중");
+		});
 	</script>
 </body>
 </html>

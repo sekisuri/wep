@@ -6,9 +6,7 @@
 	src:local('☺'), 
 	     url('../font/NANUMGOTHICBOLD.TTF');
 }
-a {
-   text-decoration: none;
-}
+
 body { 
     background-color: #edf4e1; /* Background color */
     color: #222;          /* Foreground color used for text */
@@ -17,7 +15,13 @@ body {
     padding: 0;               /* Amount of negative space around the inside of the body */
    /*background-image:url('../images/bg.png');*/
 }
+a {
+   text-decoration: none;
+}
+button a{
+     text-decoration: none;
 
+}
 .openingBox .Text {
     margin-top: 10%;
     margin-right: 5%;

@@ -1,6 +1,117 @@
 $(document).ready(function(){
-	$("#saleFail").hide();
-	$("#loading").hide();	
+
+	//$("#saleFail").hide();
+	$("#loading").hide();
+	$("#showExtendIncentive").hide();	
+
+//sekisuri_150130 월청구금액 버튼 모달   <START
+/* my_validate.js 로 옴김
+	$("#btnModal").click(function(){
+		$("#myModal").modal('show');
+	});
+	$("#btn_closeModal").click(function(){
+		$("#myModal").modal('hide');
+		$("#selectTelecom").val("none");
+		$("#selectType").val("none");
+		$("#selectModel").val("none");
+		$("#selectCharge").val("none");
+
+		//가격 리셋 
+		$("#origin_price").val("");
+		$("#support_charge").val("");
+		$("#final_price").val("");
+		$("#selectInstalment").val("none");
+	});
+*/
+//sekisuri_150130 월청구금액 버튼 모달   <END
+
+	//sekisuri_150129   <START
+
+	jQuery('#extendAddSupport').keyup(function () {     
+	  this.value = this.value.replace(/[^0-9\.]/g,'');
+	});
+
+	$("#btnReIncentive").click(function(){
+		getAddIncentive = $("#extendAddSupport").val();
+		getFinalIncentive = window.localStorage['판매_최종수수료'];
+		reFinalIncentive =  Number(getFinalIncentive) - Number(getAddIncentive);
+		$("#extendIncentive").val($.number(reFinalIncentive));
+	});
+	$("#btnCode").click(function(){
+		var getModel = $("#selectModel option:selected").val(); // 모델
+		//var getTelecom = $("#selectTelecom option:selected").val(); // 통신사 
+		var getCharge = $("#selectCharge option:selected").text();// 요금제이름 value에 공백문제땜시 선택된 텍스트로 가져옴  
+		var getType = $("#selectType option:selected").val();
+		var getMinus = getType + "_" + getCharge;
+		var getCode = $("#inputCode").val();// 판매사 코드
+		var getIncentive = window.localStorage['판매_수수료'];
+		var is_IDcheck = false;
+		$.ajax({
+			url:"http://rubicone.cafe24.com/phonecooker/q.php?qdata=user",
+			dataType: 'jsonp',
+			jsonpCallback:'callback',
+			success:function(data){
+				$.each(data,function(key,val){
+					
+
+					if(val.아이디 == getCode)
+					{
+						
+						is_IDcheck = true;
+						//return;
+						
+					}														
+					else
+					{
+						//is_IDcheck = false;
+					//	$("#inputColor").addClass("form-group has-error");
+						//$("#inputCode").val('');
+						//$("#inputCode").attr("placeholder", "판매사코드가 틀립니다.");
+						
+						//return false;
+					}
+
+				});
+				if(is_IDcheck == true)
+				{
+					$.ajax({
+						url:"http://rubicone.cafe24.com/phonecooker/q.php?qdata=minus",
+						dataType: 'jsonp',
+						//jsonpCallback:'mycall',
+						success:function(data){
+							$.each(data,function(key,val){
+								if(val.모델명 == getModel)
+								{
+									var final_incentive = Number(getIncentive) - Number(val[getMinus]);
+									console.log("sale.js::43 getIncentive : " + getIncentive);
+									console.log("sale.js::44 val[getMinus] : " + val[getMinus]);
+									console.log("sale.js::45 final_incentive : " + final_incentive);
+									$("#extendIncentive").val($.number(final_incentive));
+									window.localStorage['판매_최종수수료'] = final_incentive;
+
+								}
+							//	console.log("sale.js::49 getMinus : " +getMinus);
+							});
+							$('#showExtendIncentive').show();
+
+						}
+					});
+				}
+				else
+				{
+					alert("판매사코드가 틀립니다.");
+				}
+			}
+		});
+	});
+	//sekisuri_150129   <END
+
+	//sekisuri_   <START
+		$("#btnExitExtend").click(function(){
+			$('#showExtendIncentive').hide();
+
+		});
+	//sekisuri_   <END
 
 });
 
@@ -11,9 +122,9 @@ $(document).ready(function(){
 		var item_type = [];
 		var getTelecom = $("#selectTelecom option:selected").val();
 		item_type.push("<option value='none'>미선택</option>");
-		item_type.push("<option value=" + getTelecom + "신규>" + "신규 </option>");
-		item_type.push("<option value=" + getTelecom + "MNP>" + "번호이동 </option>");
-		item_type.push("<option value=" + getTelecom + "기변>" + "기기변경 </option>");
+		item_type.push("<option value=신규>신규</option>");
+		item_type.push("<option value=MNP>번호이동</option>");
+		item_type.push("<option value=기변>기기변경</option>");
 
 		$("#selectType").html(item_type.join(""));
 		$("#selectModel").val("none");
@@ -68,7 +179,7 @@ $(document).ready(function(){
 		$("#saleFail").hide();
 
 		$.ajax({
-			url: "http://rubicone.cafe24.com/phonecooker/q.php?qdata=price",
+			url: "http://rubicone.cafe24.com/phonecooker/q.php?qdata=charge",
 			dataType: 'jsonp',
 			jsonpCallback: 'callback',
 			success: function(data){
@@ -95,7 +206,7 @@ $(document).ready(function(){
 
 			},
 			error: function(xhr){
-				console.log('json Error'.xhr);
+				console.log('json Error',xhr);
 			}
 
 		});		
@@ -103,6 +214,10 @@ $(document).ready(function(){
 		/* incentive json을 가져와 판매수익 저장하고 판매불가시 메시지 표시함 */	
 		var getType = $("#selectType option:selected").val();
 		var getModel = $("#selectModel option:selected").val();
+		var getIncenType = getTelecom + "_" + getType; // sekisuri incentive.json:: 'SK + _ + 신규' SK예)SK_신규
+
+		console.log("sale.js::154 getType = " + getType);
+		console.log("sale.js::155 getIncenType = " + getIncenType);
 		$.ajax({
 			url: "http://rubicone.cafe24.com/phonecooker/q.php?qdata=incentive",
 			dataType: 'jsonp',
@@ -111,21 +226,28 @@ $(document).ready(function(){
 				$.each(data,function(key,val){
 					if(val.모델명 == getModel)
 					{
-						console.log(val.모델명);
-						console.log(getType);
-						if(val[getType] == "판매불가")
+						console.log("sale.js::164 val.모델명 = " + val.모델명);
+						console.log("sale.js::165 getIncenType = " +getIncenType);
+						if(val[getIncenType] == "판매불가")
 						{
-							$("#saleFail").show();
+							//$("#saleFail").show();
+							//sekisuri_15130 판매불가 선택시 모델 출고가 초기화   <START
+							alert("판매불가");
+							$("#selectModel").val("none");
+							$("#origin_price").val("");
+							//sekisuri_150130 판매불가 선택시 모델 출고가 초기화   <END
+
 						}
 						else
 						{
-							window.localStorage['판매_수수료'] = val[getType];
+							window.localStorage['판매_수수료'] = val[getIncenType];
+							console.log("sale.js::173 판매수수료 = " + val[getIncenType]);
 						}
 					}
 				});
 			},
 			error: function(xhr){
-				console.log('json Error'.xhr);
+				console.log('json Error',xhr);
 			}
 
 
@@ -197,7 +319,7 @@ $(document).ready(function(){
 		var getCharge = $("#selectCharge option:selected").text();// 요금제이름 value에 공백문제땜시 선택된 텍스트로 가져옴  
 		
 		$.ajax({
-			url: "http://rubicone.cafe24.com/phonecooker/q.php?qdata=price",
+			url: "http://rubicone.cafe24.com/phonecooker/q.php?qdata=charge",
 			dataType: 'jsonp',
 			jsonpCallback: 'callback',
 			success: function(data){
@@ -205,8 +327,8 @@ $(document).ready(function(){
 				$.each(data,function(key,val){
 					if(val.요금제명 == getCharge)
 					{
-						getTelecomPrice = val.월기본요금;
-						getDiscount = val.월할인금액;
+						getTelecomPrice = val.기본요금;
+						getDiscount = val.월할인금;
 					}	
 				});
 				console.log(getDiscount);
@@ -233,25 +355,37 @@ $(document).ready(function(){
 
 				$("#price_header").html("요금: " + getCharge + " 모델: " + getModelText); //요금명, 모델명
 				$("#modalType").html(getType); // 유형
-				$("#modalOriginPrice").html(getOriginPrice); // 출고가, 어차피 계산할필요 없어서 콤마찍힌거 가져옴 
+				$("#modalOriginPrice").html(getOriginPrice + "원"); // 출고가, 어차피 계산할필요 없어서 콤마찍힌거 가져옴 
 				$("#modalSupport").html($.number(getSupport) + "원"); // 지원금
 				$("#modalFinalPrice").html($.number(getFinal) + "원");	 // 할부원금
 				$("#modalMonth").html(getSelectInstalment + "개월");	// 할부개월
-				$("#modalMonthModel").html($.number(monthModelPrice) + "원  (할부수수료 미포함)"); // 월 기기 요금
+				$("#modalMonthModel").html($.number(monthModelPrice) + "원  <p>(할부수수료 미포함)</p>"); // 월 기기 요금
 				$("#modalMonthTelecom").html($.number(getTelecomPrice) + "원"); // 통신요금  -- 아직 통신요금 모름
 				//
 				$("#modalTelecomTex").html($.number(getTelecomTex) + "원");		//통신요금 부가세 -- 아직모름
 				//$("#modalTotalTelecom").html($.number(monthTelecomPrice) + "원")	//월 요금
-				$("#modalDiscount").html("-" + $.number(getDiscount) + "원  (요금할인 부가세 포함)"); // 할인 -- 요건 넣을지 말지 아직모름
-				$("#modalTotalMonthPrice").html("<strong>" + $.number(totalMonthPrice) + "원 </strong>");	// 월 납부금 --통신요금을 몰라서 우선 월 기기요금으로...
+				$("#modalDiscount").html("-" + $.number(getDiscount) + "원  <p>(요금할인 부가세 포함)</p>"); // 할인 -- 요건 넣을지 말지 아직모름
+				$("#modalTotalMonthPrice").html("<strong>" + $.number(totalMonthPrice) + "원 </strong>");	
+				// 월 납부금 --통신요금을 몰라서 우선 월 기기요금으로...
 
 				//getIncentive = window.localStorage['판매_수수료'];
 				//$("#modalIncentive").val($.number(getIncentive) + "원");
+
+				//sekisuri_150130  수수료 모드 <START
+				$("#extendTelecom").val(getTelecom); //통신사
+				$("#extendOrigin").val(getOriginPrice); //출고가격
+				$("#extendType").val(getType); //유형
+				$("#extendSupport").val(getSupport); // 공시 지원금
+				$("#extendModel").val(getModel); // 모델
+				// 추가 지원금
+				$("#extendTelecomPrice").val($.number(getTelecomPrice)); //요금제
+				$("#extendFinal").val($.number(getFinal)); // 할부원금
+				//sekisuri_150130 수수료 모드   <END
 				setLocalStorage(); // 로컬스토리지에 저장
 
 			},
 			error: function(xhr){
-				console.log('json Error'.xhr);
+				console.log('json Error',xhr);
 			}
 
 		});		

@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">    
         <link rel="stylesheet" href="css/jong_style.css">  
 
-  <!--  <script src="cordova.js" type="text/javascript"></script>
+  <script src="cordova.js" type="text/javascript"></script>
    <script src="js/my/my_phonegap.js" type="text/javascript"></script>
     <script src="js/my/btn_homeback.js" type="text/javascript"></script>  
         <script src="js/my/my_validate.js" type="text/javascript"></script>
- -->
+ 
     <script src="js/my/sale.js" type="text/javascript"></script>
 
    
@@ -31,7 +31,6 @@
 			top: 0px;
 			width: 100%;
 			filter:alpha(opacity=50);
-			-moz-opacity:0.5;
 			opacity : 0.5;
 		}
 
@@ -56,6 +55,7 @@
 			float: right;
 		}
     </style>
+
 </head>
 <body>
 	<div id="header">
@@ -83,142 +83,150 @@
 			<p class="text-center"><!--<strong>휴대폰 판매</strong>--></p> 
 		</div>
 		<div class="panel-body">
-			<div class="well">
-				<div class="row">
-					<div class="col-xs-4"> 
-						<div id="phone_image">
-							<img src="images/blank.png" width="100%" height="80%" class="img-responsive" alt="phone image">
-						</div>
-						
-						<div class="col-xs-9">
-							<div id="phone_modelcode">
+			<div id="common_body">
+
+			<!--	<script type="text/javascript">
+					$("#common_body").load("common/common_body.html");
+    				
+    			</script>-->
+				<div class="well">
+					<div class="row">
+						<div class="col-xs-4"> 
+							<div id="phone_image">
+								<img src="images/blank.png" width="100%" height="80%" class="img-responsive" alt="phone image">
 							</div>
+							
+							<div class="col-xs-9">
+								<div id="phone_modelcode">
+								</div>
+							</div>
+							
 						</div>
-						
+						<div class="col-xs-8">
+
+							<!-- 통신사 선택 -->
+							<div class="aline_right">
+								<span class="label label-success">
+									통신사 선택 
+								</span>
+							</div>
+							<div id="telecom_click">
+								<select class="form-control" id="selectTelecom">
+									<option value="none">미선택</option>
+									<option value="SK">SK</option>
+									<option value="KT">KT</option>
+									<option value="LG">LG</option>
+								</select>
+							</div>
+							<!-- 통신사선택 끝 -->
+
+							<!-- 유형 선택 -->
+							<div class="aline_right">
+								<span class="label label-success">
+									유형 
+								</span>
+							</div>
+
+							<div id="type_click">
+								<select class="form-control" id="selectType">
+
+								</select>
+							</div>
+							<!-- 유형 선택 끝 -->
+
+							<!-- 휴대폰 선택 -->
+							<div class="aline_right">
+								<span class="label label-success">
+									휴대폰기기 선택
+								</span>
+							</div>
+							<div id="model_click">
+								<select class="form-control" id="selectModel">
+
+								</select>
+							</div>
+							<!-- 휴대폰선택 끝 -->
+							<!--판매불가 메시지
+							<div class="alert alert-danger" id="saleFail">
+								판매불가
+							</div>
+							판매불가 메시지 끝 -->
+
+							<!-- 요금제 선택 -->
+							<div class="aline_right">
+								<span class="label label-success">
+									요금제 선택 
+								</span>
+							</div>
+							<div id="charge_click">
+								<select class="form-control" id="selectCharge">
+									
+								</select>
+							</div>
+							<!-- 요금제선택 끝 -->
+
+						</div>
+						<!-- <div class="col-xs-8"> -->
+					</div> 
+					<!-- <div class="row"> -->
+				</div>
+				<!-- <div class="well"> -->
+
+				<div class="well">
+
+					<!-- 출고가 -->
+					<div>
+						<span class="label label-success">
+								출고가 
+						</span>	
+						<input class="form-control" id="origin_price" type="text" disabled>
 					</div>
-					<div class="col-xs-8">
+					<!-- 출고가 끝 -->
 
-						<!-- 통신사 선택 -->
-						<div class="aline_right">
-							<span class="label label-success">
-								통신사 선택 
-							</span>
-						</div>
-						<div id="telecom_click">
-							<select class="form-control" id="selectTelecom">
-								<option value="none">미선택</option>
-								<option value="SK">SK</option>
-								<option value="KT">KT</option>
-								<option value="LG">LG</option>
-							</select>
-						</div>
-						<!-- 통신사선택 끝 -->
-
-						<!-- 유형 선택 -->
-						<div class="aline_right">
-							<span class="label label-success">
-								유형 
-							</span>
-						</div>
-
-						<div id="type_click">
-							<select class="form-control" id="selectType">
-
-							</select>
-						</div>
-						<!-- 유형 선택 끝 -->
-
-						<!-- 휴대폰 선택 -->
-						<div class="aline_right">
-							<span class="label label-success">
-								휴대폰기기 선택
-							</span>
-						</div>
-						<div id="model_click">
-							<select class="form-control" id="selectModel">
-
-							</select>
-						</div>
-						<!-- 휴대폰선택 끝 -->
-						<!--판매불가 메시지 -->
-						<div class="alert alert-danger" id="saleFail">
-							판매불가
-						</div>
-						<!--판매불가 메시지 끝 -->
-
-						<!-- 요금제 선택 -->
-						<div class="aline_right">
-							<span class="label label-success">
-								요금제 선택 
-							</span>
-						</div>
-						<div id="charge_click">
-							<select class="form-control" id="selectCharge">
-								
-							</select>
-						</div>
-						<!-- 요금제선택 끝 -->
+					<!-- 공시 지원금 -->
+					<div>
+						<span class="label label-success">
+								공시 지원금
+						</span>	
+						<input class="form-control" id="support_charge" type="text" disabled>
 
 					</div>
-					<!-- <div class="col-xs-8"> -->
+					<!-- 공시 지원금 끝 -->
+				
+					<!-- 할부 원금 -->
+					<div>
+						<span class="label label-success">
+								할부원금
+						</span>	
+						<input class="form-control" id="final_price" type="text" disabled>
+					</div>
+					<!-- 할부원금 끝-->
+
+					<!-- 요금제 선택 -->
+					<div class="aline_right">
+						<span class="label label-success">
+						할부 개월 수
+						</span>
+					</div>
+					<div id="instalment_click">
+						<select class="form-control" id="selectInstalment">
+							<option value="none">미선택</option>
+							<option value="24">24개월</option>
+							<option value="30">30개월</option>
+							<option value="36">36개월</option>
+						</select>
+					</div>
+					<!-- 요금제선택 끝 -->
+
 				</div> 
-				<!-- <div class="row"> -->
-			</div>
-			<!-- <div class="well"> -->
+				<!-- <div class="well"> -->
 
-			<div class="well">
+					<!-- Button trigger modal -->
+					<button class="btn btn-success btn-lg btn-block" id="btnModal">
+						월 청구금액 확인
+					</button>
+			</div><!-- 	<div id="common_body"> -->
 
-				<!-- 출고가 -->
-				<div>
-					<span class="label label-success">
-							출고가 
-					</span>	
-					<input class="form-control" id="origin_price" type="text" disabled>
-				</div>
-				<!-- 출고가 끝 -->
-
-				<!-- 공시 지원금 -->
-				<div>
-					<span class="label label-success">
-							공시 지원금
-					</span>	
-					<input class="form-control" id="support_charge" type="text" disabled>
-
-				</div>
-				<!-- 공시 지원금 끝 -->
-			
-				<!-- 할부 원금 -->
-				<div>
-					<span class="label label-success">
-							할부원금
-					</span>	
-					<input class="form-control" id="final_price" type="text" disabled>
-				</div>
-				<!-- 할부원금 끝-->
-
-				<!-- 요금제 선택 -->
-				<div class="aline_right">
-					<span class="label label-success">
-					할부 개월 수
-					</span>
-				</div>
-				<div id="instalment_click">
-					<select class="form-control" id="selectInstalment">
-						<option value="미선택">미선택</option>
-						<option value="24">24개월</option>
-						<option value="30">30개월</option>
-						<option value="36">36개월</option>
-					</select>
-				</div>
-				<!-- 요금제선택 끝 -->
-	
-			</div> 
-			<!-- <div class="well"> -->
-
-			<!-- Button trigger modal -->
-			<button class="btn btn-success btn-lg btn-block" id="btnModal">
-				판매 수수료 확인
-			</button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="myModal">
@@ -229,25 +237,103 @@
 							<h4 class="modal-title">월 청구금액</h4>
 						</div>
 						<div class="modal-body">
-							<div class="row">
-								<div class="col-xs-6">
-									<input class="form-control" id="inputCode" type="text">
-								</div>
-								<div class="col-xs-6">
-									<button type="button" class="btn btn-default" id="btnCode">확인</button>
-								</div>
-							</div>
+							
 								<!--sekisuri_150129 수수료 모달   //START-->
-								<div id="showIncentive">
+								<div class="row">
 									<div class="col-xs-8">
-									<input class="form-control" id="inputCode" type="text">
-								</div>
-								<div class="col-xs-4">
-									<button type="button" class="btn btn-default" id="btnCode">확인</button>
-								</div>
-								</div><!-- <div id="showIncentive"> -->
+										<input class="form-control" id="inputCode" type="text">
+									</div>
+									<div class="col-xs-4">
+										<button type="button" class="btn btn-default" id="btnCode">확인</button>
+									</div>
+								</div><!-- <div class="row"> -->
 								<!--sekisuri_150129 수수료 모달   END//-->
 							<div class="panel panel-success">
+
+							<!--sekisuri_ 150129  extend Incentive //START-->
+							<div id="showExtendIncentive">
+								<div class="well">
+									<div class="row">
+										<div class="col-xs-6">
+											<span class="label label-success">
+												통신사
+											</span>	
+											<input class="form-control" id="extendTelecom" type="text" disabled>
+										</div>
+										<div class="col-xs-6">
+											<span class="label label-success">
+												출고가
+											</span>	
+											<input class="form-control" id="extendOrigin" type="text" disabled>
+
+										</div>
+									</div><!--<div class="row">-->
+									<div class="row">
+										<div class="col-xs-6">
+											<span class="label label-success">
+												유형
+											</span>	
+											<input class="form-control" id="extendType" type="text" disabled>
+										</div>
+										<div class="col-xs-6">
+											<span class="label label-success">
+												공시지원금
+											</span>	
+											<input class="form-control" id="extendSupport" type="text" disabled>
+
+										</div>
+									</div><!--<div class="row">-->
+									<div class="row">
+										<div class="col-xs-6">
+											<span class="label label-success">
+												모델
+											</span>	
+											<input class="form-control" id="extendModel" type="text" disabled>
+										</div>
+										<div class="col-xs-6">
+											<span class="label label-success">
+												추가지원금
+											</span>	
+											<input class="form-control" id="extendAddSupport" type="text" >
+
+										</div>
+									</div><!--<div class="row">-->
+									<div class="row">
+										<div class="col-xs-6">
+											<span class="label label-success">
+												요금제
+											</span>	
+											<input class="form-control" id="extendTelecomPrice" type="text" disabled>
+										</div>
+										<div class="col-xs-6">
+											<span class="label label-success">
+												할부원금
+											</span>	
+											<input class="form-control" id="extendFinal" type="text" disabled>
+
+										</div>
+									</div><!--<div class="row">-->
+									<hr>
+									<!--sekisuri_150129 수수료 다시계산   //START-->
+									<div class="row">
+										<div class="col-xs-6">
+											
+											<input type="text" class="form-control" id="extendIncentive" disabled>
+										</div>
+										<div class="col-xs-6">
+											<button type="button" class="btn btn-default" id="btnReIncentive">다시계산</button>
+										</div>
+									</div><!-- <div class="row"> -->
+									<hr>
+								<!--sekisuri_150129 수수료 다시계산   END//-->
+									<button type="button" class="btn btn-default btn-lg btn-block" id="btnExitExtend">
+										닫음
+									</button>
+									
+								</div><!--<div class="well"> -->
+							</div> <!--<div id="showExtendIncentive">-->
+							
+							<!--sekisuri_1501   END//-->
 								<!-- Default panel contents -->
 								<div class="panel-heading" id="price_header"></div>
 								<div class="table-responsive">
@@ -360,39 +446,24 @@
 								</div>
 							</div>
 							<!-- <div class="panel panel-success"> -->
-							<!-- 판매 수수료 -->
-							<div>
-								<span class="label label-success">
-										판매사 코드
-								</span>	
-								<form class="form-inline" role="form">
-									<div class="form-group">
-										<div id="inputColor">
-											<input class="form-control" id="modalIncentive" type="text" placeholder="판매사코드 입력">
-										</div>
-									</div>
-									
-									<button type="button" id="btnIncentiveCode" class="btn btn-default">입력</button>
-								</form>
-
-							</div>
-							<!-- 판매수수료 끝 -->
+							
 
 						</div>
 						<!--<div class="modal-body"> -->
 						<div class="modal-footer">
 							<div class="wall">
-								<a href="#">
-									<button type="button" class="btn btn-success btn-lg btn-block">
-										가입 신청서 작성 하기 
-									</button>
-								</a>
+								<button type="button" class="btn btn-success btn-lg btn-block" id="btnWriteJoin">
+									가입 신청서 작성 하기 
+								</button>
+								<hr>
 								<a href="totalincentive.html">
 									<button type="button" class="btn btn-success btn-lg btn-block">
 										전체 모델 수수료 검색!!
 									</button>
 								</a>
-								<button type="button" class="btn btn-default btn-lg btn-block" data-dismiss="modal">다시 컨설팅</button>
+								<button type="button" class="btn btn-default btn-lg btn-block" id="btn_closeModal">
+								다시 컨설팅
+								</button>
 							</div>
 						</div>
 					</div>
@@ -408,7 +479,11 @@
 	</div>
 	<!--<div class="panel panel-primary"> -->
 
-
+<script type="text/javascript">
+					//$.get("common/common_body.html",function(data){
+					//	$("#common_body").html(data);
+					//});
+				</script>
 	<script type="text/javascript">
 		
 	</script>

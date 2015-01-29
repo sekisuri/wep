@@ -205,12 +205,12 @@ $(document).ready(function(){
 				$("#modalSupport").html($.number(getSupport) + "원"); // 지원금
 				$("#modalFinalPrice").html($.number(getFinal) + "원");	 // 할부원금
 				$("#modalMonth").html(getSelectInstalment + "개월");	// 할부개월
-				$("#modalMonthModel").html($.number(monthModelPrice) + "원  (할부수수료 미포함)"); // 월 기기 요금
+				$("#modalMonthModel").html($.number(monthModelPrice) + "원<p>(할부수수료 미포함)</p>"); // 월 기기 요금
 				$("#modalMonthTelecom").html($.number(getTelecomPrice) + "원"); // 통신요금  -- 아직 통신요금 모름
 				//
 				$("#modalTelecomTex").html($.number(getTelecomTex) + "원");		//통신요금 부가세 -- 아직모름
 				//$("#modalTotalTelecom").html($.number(monthTelecomPrice) + "원")	//월 요금
-				$("#modalDiscount").html("-" + $.number(getDiscount) + "원  (요금할인 부가세 포함)"); // 할인 -- 요건 넣을지 말지 아직모름
+				$("#modalDiscount").html("-" + $.number(getDiscount) + "원<p>(요금할인 부가세 포함)</p>"); // 할인 -- 요건 넣을지 말지 아직모름
 				$("#modalTotalMonthPrice").html("<strong>" + $.number(totalMonthPrice) + "원 </strong>");	// 월 납부금 --통신요금을 몰라서 우선 월 기기요금으로...
 				setLocalStorage(); // 로컬스토리지에 저장
 
