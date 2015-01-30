@@ -56,6 +56,8 @@
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/sqltest.html \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/totalincentive.html \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/common/common_body.html \
+/Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/common/common_modalbody.html \
+/Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/common/my_alert.html \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/css/bootstrap-theme.css \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/css/bootstrap-theme.css.map \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/css/bootstrap-theme.min.css \
@@ -105,6 +107,7 @@
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/npm.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/star-rating \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/btn_homeback.js \
+/Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/common_estimate.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/my_phonegap.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/my_validate.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/sale.js \

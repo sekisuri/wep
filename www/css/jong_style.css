@@ -153,9 +153,7 @@ header {
     border-width: 0 8px 0 8px;
     -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
 }
-#header div.pressed {
-    -webkit-border-image: url(images/button_clicked_msn.png) 0 8 0 8;
-}
+
 #header div.leftButton {
     position: absolute;
     top: 1%;
@@ -173,8 +171,14 @@ header {
     color:#fff;
     text-decoration: none;
 }
-
-
+#header div.pressed {
+    -webkit-border-image: url(images/button_clicked_msn.png) 0 8 0 8;
+}
+#phone_modelcode{
+  text-align: center;;
+text-shadow: 0px 1px 1px #fff;
+height:10%;
+}
 #content{
     float:center;
     text-align:center;
