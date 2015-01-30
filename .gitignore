@@ -44,4 +44,4 @@ proguard/
 # Log Files
 *.log
 platforms/android/assets/*
-*.html
+
