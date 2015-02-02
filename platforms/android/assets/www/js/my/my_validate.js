@@ -9,27 +9,27 @@ $(document).ready(function(){
 
 		if(getTelecom == "" || getTelecom == "none")
 		{
-			my_alert("통신사를 선택해주세요.");
+			alert("통신사를 선택해주세요.");
 			return false;
 		}
 		if(getType == "" || getType == "none")
 		{
-			my_alert("유형을 선택해주세요.");
+			alert("유형을 선택해주세요.");
 			return false;
 		}
 		if(getModel == "" || getModel == "none")
 		{
-			my_alert("휴대폰을 선택해주세요.");
+			alert("휴대폰을 선택해주세요.");
 			return false;
 		}
 		if(getCharge == "" || getCharge == "none")
 		{
-			my_alert("요금제를 선택해주세요.");
+			alert("요금제를 선택해주세요.");
 			return false;
 		}
 		if(getInstalment == "" || getInstalment == "none")
 		{
-			my_alert("할부개월을 선택하세요.");
+			alert("할부개월을 선택하세요.");
 			return false;
 		}
 		clickModal();
@@ -41,11 +41,16 @@ $(document).ready(function(){
 		$("#selectType").val("none");
 		$("#selectModel").val("none");
 		$("#selectCharge").val("none");
-
+		$("#phone_modelcode").html(""); // sekisuri 시진텍스트 초기화
+		$("#inputCode").html("");
+		$("#inputCode").attr("placeholder", "판매사 코드입력");
 		//가격 리셋 
 		$("#origin_price").val("");
 		$("#support_charge").val("");
 		$("#final_price").val("");
+		$("#add_support").val("");
+		$("#add_support").attr("placeholder", "0");
 		$("#selectInstalment").val("none");
+
 	});
 });

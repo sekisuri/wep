@@ -26,10 +26,23 @@ $(document).ready(function(){
 
 	//sekisuri_150129   <START
 
-
+/*
 	jQuery('#extendAddSupport').keyup(function () {     
 	  this.value = this.value.replace(/[^0-9\.]/g,'');
+
+	  var final_incentive = window.localStorage['판매_최종수수료'];
+	  var getFinal = window.localStorage['판매_할부원금']; // 할부원금 --콤마 제거
+	  getFinal = getFinal - this.value;
+	  final_incentive = final_incentive - this.value;
+	  window.localStorage['판매_할부원금'] = getFinal;
+	  window.localStorage['판매_최종수수료'] = final_incentive;
+	  $("#extendFinal").val($.number(getFinal)); // 할부원금
+	  $("#extendIncentive").val($.number(final_incentive));
+
+	  
+
 	});
+*/ 
 
 	$("#btnReIncentive").click(function(){
 		getAddIncentive = $("#extendAddSupport").val();
@@ -51,17 +64,18 @@ $(document).ready(function(){
 		var getIncentive = window.localStorage['판매_수수료'];
 		var getTelecomPrice = window.localStorage['판매_월통신기본요금'];
 		var getFinal = window.localStorage['판매_할부원금']; // 할부원금 --콤마 제거
+		var getAddSupport = window.localStorage['판매_추가지원금'];
 		var is_IDcheck = false;
 		console.log("click btnCode!!!");
 
 		//sekisuri_150130  수수료 모드 <START
 		$("#extendTelecom").val(getTelecom); //통신사
-		$("#extendOrigin").val(getOriginPrice); //출고가격
+		$("#extendOrigin").val($.number(getOriginPrice)); //출고가격
 		$("#extendType").val(getTypeText); //유형
-		$("#extendSupport").val(getSupport); // 공시 지원금
+		$("#extendSupport").val($.number(getSupport)); // 공시 지원금
 		$("#extendModel").val(getModel); // 모델
-		// 추가 지원금
-		$("#extendTelecomPrice").val($.number(getTelecomPrice)); //요금제
+		$("#extendAddSupport").val($.number(getAddSupport));//$("#extendAddSupport").val("0");// 추가 지원금
+		$("#extendTelecomPrice").val(getCharge); //요금제
 		$("#extendFinal").val($.number(getFinal)); // 할부원금
 		//sekisuri_150130 수수료 모드   <END
 		$.ajax({
@@ -100,7 +114,7 @@ $(document).ready(function(){
 							$.each(data,function(key,val){
 								if(val.모델명 == getModel)
 								{
-									var final_incentive = Number(getIncentive) - Number(val[getMinus]);
+									var final_incentive = Number(getIncentive) - Number(val[getMinus]) - Number(getAddSupport);
 									console.log("sale.js::43 getIncentive : " + getIncentive);
 									console.log("sale.js::44 val[getMinus] : " + val[getMinus]);
 									console.log("sale.js::45 final_incentive : " + final_incentive);
@@ -126,12 +140,21 @@ $(document).ready(function(){
 	//sekisuri_150129   <END
 
 	//sekisuri_   <START
-		$("#btnExitExtend").click(function(){
-			$('#showExtendIncentive').modal('hide');
-			//$('#showExtendIncentive').data('modal', null);
+	$("#btnExitExtend").click(function(){
+		$('#showExtendIncentive').modal('hide');
+		//$('#showExtendIncentive').data('modal', null);
+	//	$('#myModal').modal('show');
+		var joinButton = "<button type='button' class='btn btn-success btn-lg btn-block' onclick='btnClick()'>가입 신청서 작성 하기 </button>"
+		$("#btnInsert").html(joinButton);
+		$("#hideModal").hide();
 
 
-		});
+	});
+	
 	//sekisuri_   <END
 
 });
+function btnClick()
+{
+	alert("준비중");
+}
