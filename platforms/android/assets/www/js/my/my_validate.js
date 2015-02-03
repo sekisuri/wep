@@ -32,6 +32,7 @@ $(document).ready(function(){
 			alert("할부개월을 선택하세요.");
 			return false;
 		}
+
 		clickModal();
 
 	});

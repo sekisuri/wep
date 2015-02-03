@@ -92,6 +92,7 @@
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/bg.png \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/blank.png \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/content_bg.png \
+/Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/logo.png \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/openbg.png \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/opening.png \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/images/total_incentive.png \
@@ -108,6 +109,7 @@
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/star-rating \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/btn_homeback.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/common_estimate.js \
+/Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/consult.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/my_phonegap.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/my_validate.js \
 /Users/WizardCode/Documents/My_Work/www/phone_cooker/platforms/android/assets/www/js/my/sale.js \

@@ -124,8 +124,11 @@ $(document).ready(function(){
 								}
 							//	console.log("sale.js::49 getMinus : " +getMinus);
 							});
-							$('#myModal').modal('hide');
-							$('#showExtendIncentive').modal('show');
+							$("#goMain").hide(); //월청구금액 버튼
+							$("#goTotal").show(); //전체 수수료 버튼
+							$('#modalMainContents').hide();
+							$('#modalExtendTotal').hide();
+							$('#modalExtendIncentive').show();
 
 						}
 					});
@@ -139,19 +142,7 @@ $(document).ready(function(){
 	});
 	//sekisuri_150129   <END
 
-	//sekisuri_   <START
-	$("#btnExitExtend").click(function(){
-		$('#showExtendIncentive').modal('hide');
-		//$('#showExtendIncentive').data('modal', null);
-	//	$('#myModal').modal('show');
-		var joinButton = "<button type='button' class='btn btn-success btn-lg btn-block' onclick='btnClick()'>가입 신청서 작성 하기 </button>"
-		$("#btnInsert").html(joinButton);
-		$("#hideModal").hide();
-
-
-	});
 	
-	//sekisuri_   <END
 
 });
 function btnClick()

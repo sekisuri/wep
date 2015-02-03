@@ -29,6 +29,10 @@ button a{
     margin-bottom: 10;
 
 }
+
+.total_incentive {
+  font-size: 6px;
+}
 header {
 	
 }
@@ -152,46 +156,47 @@ header {
   font-weight: bold;
   text-align: center;
   padding: 10px;
-  background-color: #ddd;
-  border-top: 3px solid #888;
-  border-left: 3px solid #888;
-  border-bottom: 3px solid #444; 
-  border-right: 3px solid #444;
+  background-color: #ffffff;
+  border-top: 3px solid #02122d;
+  border-left: 3px solid #02122d;
+  border-bottom: 3px solid #02122d; 
+  border-right: 3px solid #02122d;
   -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
 }
 #header div.rightButton {
     position: absolute;
-    top: 1%;
-    right: 1%;
-    height: 30px;
+    top: 3%;
+    right: 3%;
+    width: 50px;  
+    height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+     border: 1px solid #dddbdb;
     font-weight: bold;
     text-align: center;
-    color: white;
-    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
-    line-height: 28px;
-    border-width: 0 8px 0 8px;
-    -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+    color: #222325;
+    line-height: 30px;
 }
 
 #header div.leftButton {
     position: absolute;
-    top: 1%;
-    left: 1%;
-    height: 30px;
+    top: 3%;
+    left: 3%;
+    width: 50px;  
+    height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+     border: 1px solid #dddbdb;
     font-weight: bold;
     text-align: center;
-    color: white;
-    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
-    line-height: 28px;
-    border-width: 0 8px 0 8px;
-    -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+    color: #222325;
+    line-height: 30px;
 }
-#header div.leftButton a{
-    color:#fff;
-    text-decoration: none;
-}
+
 #header div.pressed {
-    -webkit-border-image: url(images/button_clicked_msn.png) 0 8 0 8;
+    background-color: #dddbdb;
 }
 #phone_modelcode{
   text-align: center;;

@@ -203,7 +203,7 @@ function incentiveAjax(queryUrl,clickType)
 					{
 						//$("#saleFail").show();
 						//sekisuri_15130 판매불가 선택시 모델 출고가 초기화   <START
-						my_alert("구입불가");
+						alert("구입 및 판매불가");
 						$("#selectModel").val("none");
 						$("#origin_price").val("");
 						//sekisuri_150130 판매불가 선택시 모델 출고가 초기화   <END
@@ -231,6 +231,7 @@ function incentiveAjax(queryUrl,clickType)
 //sekisuri_   <START
 function clickModal()
 {
+	
 	var getTelecom = $("#selectTelecom option:selected").val(); // 통신사 
 	var getType = $("#selectType option:selected").val(); // 유형
 	var getTypeText = $("#selectType option:selected").text(); // 유형 텍스트
@@ -242,7 +243,19 @@ function clickModal()
 	var getSupport = window.localStorage['판매_공시지원금']; // 지원금
 	var getFinal = window.localStorage['판매_할부원금']; // 할부원금 --콤마 제거
 	var getSelectInstalment = $("#selectInstalment option:selected").val(); // 할부개월
+
+	//sekisuri start
+	var get_addSupport = $("#add_support").val(); // 추가지원금
+	window.localStorage['판매_추가지원금'] = get_addSupport;
+	getFinal = Number(getFinal) - Number(get_addSupport);
+	// sekisuri end
+	console.log("get_addSupport : " +get_addSupport );
+	console.log("get_addSupport : " +getFinal );
 	var monthModelPrice = Number(getFinal) / Number(getSelectInstalment); // 월 기기 요금 
+	
+
+	
+
 	console.log("sale.js :: 75 getOriginPrice = " + getOriginPrice);
 
 	var getTelecomPrice = '';// 통신요금 
@@ -275,13 +288,13 @@ function clickModal()
 				window.localStorage['판매_월최종통신요금'] = monthTelecomPrice;
 
 
-			
+				
 
 				var totalMonthPrice = Number(monthModelPrice) + Number(monthTelecomPrice) ; // 최종 월 납부금액-- 
 
-				$("#price_header").html("요금: " + getCharge + " <p>모델: " + getModelText + "</p>"); //요금명, 모델명
+				$("#price_header").html("요금제: " + getCharge + " <p>모델명: " + getModelText + "</p>"); //요금명, 모델명
 				$("#modalType").html(getTypeText); // 유형
-				$("#modalOriginPrice").html(getOriginPrice + "원"); // 출고가, 어차피 계산할필요 없어서 콤마찍힌거 가져옴 
+				$("#modalOriginPrice").html($.number(getOriginPrice) + "원"); // 출고가, 어차피 계산할필요 없어서 콤마찍힌거 가져옴 
 				$("#modalSupport").html($.number(getSupport) + "원"); // 지원금
 				$("#modalFinalPrice").html($.number(getFinal) + "원");	 // 할부원금
 				$("#modalMonth").html(getSelectInstalment + "개월");	// 할부개월
