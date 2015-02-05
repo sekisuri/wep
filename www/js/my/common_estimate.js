@@ -11,6 +11,8 @@ $(document).ready(function(){
 		$("#selectType").html(item_type.join(""));
 		$("#selectModel").val("none");
 		$("#selectCharge").val("none");
+		$("#phone_modelcode").html("");	
+		$("#phone_image").html("");
 
 		/* 가격 리셋 */
 		$("#origin_price").val("");
@@ -139,6 +141,8 @@ function common_ajax(queryUrl,clickType)
 				//sekisuri_150130 유형선택   <START
 					$("#selectModel").html(items.join("")); // 모델 셀렉트 생성
 					$("#selectCharge").val("none"); //상위선택시 하위 셀렉트 미선택으로
+					$("#phone_modelcode").html("");	
+					$("#phone_image").html("");
 
 				//sekisuri_150130 유형선택   <END
 				break;
@@ -147,6 +151,7 @@ function common_ajax(queryUrl,clickType)
 				//sekisuri_150130 모델선택   <START			
 					$("#selectCharge").html(items.join(""));
 					// sekisuri 2015/01/13 사진밑에 모델명 찍어줌 (후에 사진도 바꿔야 됨) START
+					$("#phone_image").html("<img src=images/device/" + getModel + ".jpg width='100%' height='100% class='img-responsive>" );
 					$("#phone_modelcode").html(getModel);	
 					//sekisuri 2015/01/13 사진밑에 모델명 찍어줌 끝 END
 
@@ -208,6 +213,7 @@ function incentiveAjax(queryUrl,clickType)
 						$("#origin_price").val("");
 						//sekisuri_150130 판매불가 선택시 모델 출고가 초기화   <END
 						$("#phone_modelcode").html("");	
+						$("#phone_image").html("");
 						//sekisuri 2015/01/13 사진밑에 모델명 최기화""
 
 					}

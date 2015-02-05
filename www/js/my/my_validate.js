@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var getModel = $("#selectModel option:selected").val();
 		var getCharge = $("#selectCharge").val();
 		var getInstalment = $("#selectInstalment").val();
-/*
+
 		if(getTelecom == "" || getTelecom == "none")
 		{
 			alert("통신사를 선택해주세요.");
@@ -32,7 +32,7 @@ $(document).ready(function(){
 			alert("할부개월을 선택하세요.");
 			return false;
 		}
-*/
+
 		clickModal();
 
 	});
