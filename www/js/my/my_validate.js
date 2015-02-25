@@ -45,6 +45,9 @@ $(document).ready(function(){
 		$("#phone_modelcode").html(""); // sekisuri 시진텍스트 초기화
 		$("#inputCode").html("");
 		$("#inputCode").attr("placeholder", "판매사 코드입력");
+		$("#phone_modelcode").html("");	
+		$("#phone_image").html("");//sekisuri 2015/01/13 사진밑에 모델명 최기화""
+		
 		//가격 리셋 
 		$("#origin_price").val("");
 		$("#support_charge").val("");

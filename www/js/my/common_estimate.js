@@ -151,7 +151,7 @@ function common_ajax(queryUrl,clickType)
 				//sekisuri_150130 모델선택   <START			
 					$("#selectCharge").html(items.join(""));
 					// sekisuri 2015/01/13 사진밑에 모델명 찍어줌 (후에 사진도 바꿔야 됨) START
-					$("#phone_image").html("<img src=images/device/" + getModel + ".jpg width='100%' height='100% class='img-responsive>" );
+					$("#phone_image").html("<img src=images/device/" + getModel + ".jpg width='100%' height='100%' class='img-responsive' onerror='linkNoImage()'>" );
 					$("#phone_modelcode").html(getModel);	
 					//sekisuri 2015/01/13 사진밑에 모델명 찍어줌 끝 END
 
@@ -185,6 +185,10 @@ function common_ajax(queryUrl,clickType)
 
 }
 
+function linkNoImage() { // 이미지 없을땐 noimage.jpg 로 ..
+	$("#phone_image").html("<img src=images/device/noimage.jpg width='100%' height='100%' class='img-responsive'>" );
+
+}
 //sekisuri_   <START
 function incentiveAjax(queryUrl,clickType)
 {
@@ -237,6 +241,9 @@ function incentiveAjax(queryUrl,clickType)
 //sekisuri_   <START
 function clickModal()
 {
+	$("#modalExtendIncentive").hide();//수수료
+	$('#modalExtendTotal').hide(); // 전체 수수료
+	$("#modalMainContents").show(); //월 청구금액
 	
 	var getTelecom = $("#selectTelecom option:selected").val(); // 통신사 
 	var getType = $("#selectType option:selected").val(); // 유형
