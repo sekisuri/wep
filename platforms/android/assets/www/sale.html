@@ -13,9 +13,8 @@
 
   <script src="cordova.js" type="text/javascript"></script>
    <script src="js/my/my_phonegap.js" type="text/javascript"></script>
-
     <script src="js/my/btn_homeback.js" type="text/javascript"></script>  
-    <script src="js/my/my_validate.js" type="text/javascript"></script>
+  <script src="js/my/my_validate.js" type="text/javascript"></script> 
  
     <script src="js/my/common_estimate.js" type="text/javascript"></script>
     <script src="js/my/sale.js" type="text/javascript"></script>
@@ -241,140 +240,208 @@
 <!-- Modal -->
 	<div class="modal fade" id="myModal">
 		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">닫기</button>
-					<h4 class="modal-title" id="modalTitle">월 청구금액</h4>
-				</div>
-				<div class="modal-body">
-					
-						<!--sekisuri_150129 수수료 모달   //START-->
-						<div class="row">
-							<div class="col-xs-8">
-								<input class="form-control" id="inputCode" type="text" placeholder="판매사코드 입력">
-							</div>
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-default" id="btnCode">확인</button>
-							</div>
-						</div><!-- <div class="row"> -->
-					
-						<!--sekisuri_150129 수수료 모달   END//-->
-					<div class="panel panel-warning" id="modal_body">
+			<div id="modalMainContents">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">닫기</button>
+						<h4 class="modal-title" id="modalTitle">월 청구금액</h4>
+					</div>
+					<div class="modal-body">
+						
+							<!--sekisuri_150129 수수료 모달   //START-->
+							<div class="row">
+								<div class="col-xs-8">
+									<input class="form-control" id="inputCode" type="text" placeholder="판매사코드 입력">
+								</div>
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-default" id="btnCode">확인</button>
+								</div>
+							</div><!-- <div class="row"> -->
+						
+							<!--sekisuri_150129 수수료 모달   END//-->
+						<div class="panel panel-warning" id="modal_body">
 
-						<div id="modalMainContents">
-							<!-- Default panel contents -->
-							<div class="panel-heading" id="price_header"></div>
-							<div class="table-responsive">
-							<!-- Table -->
-							<table class="table">
-								<tr>
-									<!--유형 -->
-									<td>
-									판매유형							
-									</td>
-									<td id="modalType">	
-									</td>
-									<!--유형 끝 -->
-								</tr>
-								<tr>
-									<!--출고가 -->
-									<td>
-									출고가							
-									</td>
-									<td id="modalOriginPrice">	
-									</td>
-									<!--출고가 끝 -->
-								</tr>
+							
+								<!-- Default panel contents -->
+								<div class="panel-heading" id="price_header"></div>
+								<div class="table-responsive">
+								<!-- Table -->
+								<table class="table">
 									<tr>
-									<!--지원금 -->
-									<td>
-									공시 지원금							
-									</td>
-									<td id="modalSupport">	
-									</td>
-									<!--지원금 끝 -->
-								</tr>
-								<tr>
-									<!--할부원금 -->
-									<td>
-									총 할부원금							
-									</td>
-									<td id="modalFinalPrice">	
-									</td>
-									<!--할부원금 끝 -->
-								</tr>
-								<tr>
-									<!-- 할부개월 -->
-									<td>
-									할부 개월
-									</td>
-									<td id="modalMonth">
-									</td>
-									<!-- 할부개월 끝 -->
-								</tr>
-								<tr>
-									<!-- 월 기기 요금 -->
-									<td class="success">
-									월 할부금
-									</td>
-									<td id="modalMonthModel" class="success">
-									</td>
-									<!-- 월 기기 요금 끝 -->
-								</tr>
-								<tr>
-									<!-- 요금 -->
-									<td>
-									기본 요금
-									</td>
-									<td id="modalMonthTelecom">
-									</td>
-									<!-- 요금 끝 -->
-								</tr>
-								<tr>
-									<!-- 부가세 -->
-									<td>
-									부가세 
-									</td>
-									<td id="modalTelecomTex">
-									</td>
-									<!-- 부가세 끝 -->
-								</tr>
-								<tr>
-									<!-- 할인 -->
-									<td class="danger">
-									요금 할인
-									</td>
-									<td id="modalDiscount" class="danger">
-									</td>
-									<!-- 할인 끝 -->
-								</tr>
-								<!--
-								<tr>
+										<!--유형 -->
+										<td>
+										판매유형							
+										</td>
+										<td id="modalType">	
+										</td>
+										<!--유형 끝 -->
+									</tr>
+									<tr>
+										<!--출고가 -->
+										<td>
+										출고가							
+										</td>
+										<td id="modalOriginPrice">	
+										</td>
+										<!--출고가 끝 -->
+									</tr>
+										<tr>
+										<!--지원금 -->
+										<td>
+										공시 지원금							
+										</td>
+										<td id="modalSupport">	
+										</td>
+										<!--지원금 끝 -->
+									</tr>
+									<tr>
+										<!--할부원금 -->
+										<td>
+										총 할부원금							
+										</td>
+										<td id="modalFinalPrice">	
+										</td>
+										<!--할부원금 끝 -->
+									</tr>
+									<tr>
+										<!-- 할부개월 -->
+										<td>
+										할부 개월
+										</td>
+										<td id="modalMonth">
+										</td>
+										<!-- 할부개월 끝 -->
+									</tr>
+									<tr>
+										<!-- 월 기기 요금 -->
+										<td class="success">
+										월 할부금
+										</td>
+										<td id="modalMonthModel" class="success">
+										</td>
+										<!-- 월 기기 요금 끝 -->
+									</tr>
+									<tr>
+										<!-- 요금 -->
+										<td>
+										기본 요금
+										</td>
+										<td id="modalMonthTelecom">
+										</td>
+										<!-- 요금 끝 -->
+									</tr>
+									<tr>
+										<!-- 부가세 -->
+										<td>
+										부가세 
+										</td>
+										<td id="modalTelecomTex">
+										</td>
+										<!-- 부가세 끝 -->
+									</tr>
+									<tr>
+										<!-- 할인 -->
+										<td class="danger">
+										요금 할인
+										</td>
+										<td id="modalDiscount" class="danger">
+										</td>
+										<!-- 할인 끝 -->
+									</tr>
+									<!--
+									<tr>
 
-									월요금 
-									<td>
-									월 요금
-									</td>
-									<td id="modalTotalTelecom">
-									</td>
-									월요금 끝 
-								</tr>
-								-->
-								
-								<tr>
-									<!-- 월 납부금 -->
-									<td class="info">
-									월 청구 금액 
-									</td>
-									<td id="modalTotalMonthPrice" class="info">
-									</td>
-									<!-- 월납부금 끝 -->
-								</tr>
-							</table>
-							</div><!--<div class="table-responsive"> -->
-						</div> <!--<div id="mainContens"> -->
+										월요금 
+										<td>
+										월 요금
+										</td>
+										<td id="modalTotalTelecom">
+										</td>
+										월요금 끝 
+									</tr>
+									-->
+									
+									<tr>
+										<!-- 월 납부금 -->
+										<td class="info">
+										월 청구 금액 
+										</td>
+										<td id="modalTotalMonthPrice" class="info">
+										</td>
+										<!-- 월납부금 끝 -->
+									</tr>
+								</table>
+								</div><!--<div class="table-responsive"> -->
 
-						<div id="modalExtendIncentive">
+						</div><!-- <div class="panel panel-warning"> -->
+
+						
+					</div><!--<div class="modal-body"> -->
+					<div class="modal-footer">
+						<div class="wall">
+							
+							<button type="button" class="btn btn-success btn-lg btn-block" id="btnTotalIncentive">
+								전체 모델 수수료 검색
+							</button>
+						
+							<button type="button" class="btn btn-default btn-lg btn-block" id="btn_closeModal">
+							다시 컨설팅
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div> <!--<div id="mainContens"> -->
+
+			<div id="modalExtendTotal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" id="btnReturnMain1">닫기</button>
+						<h4 class="modal-title" id="modalTitle">전체 모델 수수료 검색</h4>
+					</div>
+					<div class="modal-body">
+												
+						<div class="panel panel-warning" id="modal_body">
+
+							<div class="well">
+								<label class="radio-inline">
+								  <input type="radio" name="radio" id="radioSK" value="SK"> SK
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="radio" id="radioKT" value="KT"> KT
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="radio" id="radioLG" value="LG"> LG
+								</label>
+							</div>
+							<div id="totalIncentive" class="total_incentive">
+								<div class="table-responsive">
+									<table class="table" id="tableIncentive">
+
+									</table>
+								</div>
+
+							</div>
+
+						</div><!-- <div class="panel panel-warning"> -->						
+					</div><!--<div class="modal-body"> -->
+					<div class="modal-footer">
+						
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div><!--<div id="modalExtendTotal">-->
+
+			<div id="modalExtendIncentive">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" id="btnReturnMain2">닫기</button>
+						<h4 class="modal-title" id="modalTitle">판매수수료 확인</h4>
+					</div>
+					<div class="modal-body">
+												
+						<div class="panel panel-warning" id="modal_body">
+
 							<!--sekisuri_ 150129  extend Incentive //START-->
 							<div>
 								<div class="well">
@@ -451,63 +518,23 @@
 									<!--sekisuri_150129 수수료 다시계산   END//-->
 									<div class="content_padding">
 										<button type="button" class="btn btn-success btn-lg btn-block" id="btnExitExtend">
-											월 청구금액
+											적용
 										</button>
 									</div>
 									
 								</div><!--<div class="well"> -->
 							</div> 	<!-- dumy div -->	
 							<!--sekisuri_1501   END//-->	
-						</div> <!--<div id="modalIncentive">-->	
-						<div id="modalExtendTotal">
-							<div class="well">
-				
-								<label class="radio-inline">
-								  <input type="radio" name="radio" id="radioSK" value="SK"> SK
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="radio" id="radioKT" value="KT"> KT
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="radio" id="radioLG" value="LG"> LG
-								</label>
-							</div>
-							<div id="totalIncentive" class="total_incentive">
-								<div class="table-responsive">
-									<table class="table" id="tableIncentive">
 
-									</table>
-								</div>
-
-							</div>
-						</div><!-- <div id="totalIncentive"> -->
-
-					</div><!-- <div class="panel panel-warning"> -->
-
-					
-				</div><!--<div class="modal-body"> -->
-				<div class="modal-footer">
-					<div class="wall">
-						<div id="goMain" class="content_padding">
-							<button type="button" class="btn btn-success btn-lg btn-block" id="btnMainContents">
-								월 청구 금액
-							</button>
-						</div>
-						<div id="goTotal" class="content_padding">
-							<button type="button" class="btn btn-success btn-lg btn-block" id="btnTotalIncentive">
-								전체 모델 수수료 검색
-							</button>
-						</div>
-						<button type="button" class="btn btn-success btn-lg btn-block" id="btnWrite">
-						가입 신청서 작성 하기
-						</button>
-						<button type="button" class="btn btn-default btn-lg btn-block" id="btn_closeModal">
-						다시 컨설팅
-						</button>
+						</div><!-- <div class="panel panel-warning"> -->						
+					</div><!--<div class="modal-body"> -->
+					<div class="modal-footer">
+						
 					</div>
 				</div>
-			</div>
-			<!-- /.modal-content -->
+				<!-- /.modal-content -->
+			</div><!--<div id="modalExtendIncentive">-->
+
 		</div>
 		<!-- /.modal-dialog -->
 	</div>
@@ -526,48 +553,63 @@
 		//		alert("준비중");
 		//	});		
 
-			$("#goMain").hide(); //월청구금액 버튼
-			$("#modalExtendIncentive").hide();//수수료
-			$('#modalExtendTotal').hide(); // 전체 수수료
+			//$("#goMain").hide(); //월청구금액 버튼
+		//	$("#modalExtendIncentive").hide();//수수료
+		//	$('#modalExtendTotal').hide(); // 전체 수수료
 
 			$("#btnMainContents").click(function(){
-				$("#goMain").hide(); //월청구금액 버튼
+			//	$("#goMain").hide(); //월청구금액 버튼
+				/*
 				$("#goTotal").show(); //전체 수수료 버튼
 				$("#modalTitle").html("월 청구 금액");
 				$("#modalMainContents").show(); //월 청구금액
 				$("#modalExtendIncentive").hide(); //수수료
 				$('#modalExtendTotal').hide(); //전체 수수료
+				*/
 			});
-			//sekisuri_   <START
+			//sekisuri_ 수수료 적용 버튼  <START
 			$("#btnExitExtend").click(function(){
-				$("#goMain").hide(); //월청구금액 버튼
-				$("#goTotal").show(); //전체 수수료 버튼
-				$("#modalTitle").html("월 청구 금액");
-				$("#modalMainContents").show(); //월 청구금액
-				$("#modalExtendIncentive").hide(); //수수료
-				$('#modalExtendTotal').hide(); //전체 수수료
+			//	$("#goMain").hide(); //월청구금액 버튼
+				//$("#goTotal").show(); //전체 수수료 버튼
+				//$("#modalTitle").html("월 청구 금액");
+				//$("#modalMainContents").show(); //월 청구금액
+			//	$("#modalExtendIncentive").hide(); //수수료
+			//	$('#modalExtendTotal').hide(); //전체 수수료
 				
 				//$('#showExtendIncentive').data('modal', null);
-			//	$('#myModal').modal('show');
-				//var joinButton = "<button type='button' class='btn btn-success btn-lg btn-block' onclick='btnClick()'>가입 신청서 작성 하기 </button>"
-				//$("#btnInsert").html(joinButton);
-				//$("#hideModal").hide();
+				$('#myModal').modal('hide');
+				var joinButton = "<button type='button' class='btn btn-success btn-lg btn-block' onclick='btnClick()'>가입 신청서 작성 하기 </button>"
+				$("#btnInsert").html(joinButton);
+				$("#hideModal").hide();
 
 
 			});
-			//sekisuri_   <END
+			//sekisuri_ 전체수수료 버튼  <END
 			$("#btnTotalIncentive").click(function(){
-				$("#goMain").show(); //월청구금액 버튼
-				$("#goTotal").hide(); //전체 수수료 버튼
+			//	$("#goMain").show(); //월청구금액 버튼
+				//$("#goTotal").hide(); //전체 수수료 버튼
 				$("#modalMainContents").hide(); //월 청구금액
-				$("#modalExtendIncentive").hide(); //수수료
+				//$("#modalExtendIncentive").hide(); //수수료
 				$('#modalExtendTotal').show(); //전체 수수료
 				
-				$("#modalTitle").html("전체 모델 수수료 검색");
+				//$("#modalTitle").html("전체 모델 수수료 검색");
 			});
 
 			$("#btnWrite").click(function(){
 				alert("준비중");
+			});
+			// 전체수수료 닫기 버튼
+			$("#btnReturnMain1").click(function(){
+				//$("#modalExtendIncentive").hide(); //수수료
+				$('#modalExtendTotal').hide(); //전체 수수료
+				$("#modalMainContents").show();
+			});
+
+			// 수수료 닫기 버튼
+			$("#btnReturnMain2").click(function(){
+				$("#modalExtendIncentive").hide(); //수수료
+				//$('#modalExtendTotal').hide(); //전체 수수료
+				$("#modalMainContents").show();
 			});
 			$("input:radio[name='radio']").click(function(){
 				//var selectRadio = $(":radio[name='radio']:checked").val();
