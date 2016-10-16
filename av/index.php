@@ -28,16 +28,24 @@ include "lib/config.php";
    	<body>
    		<!-- 헤더 -->
         <div class="header home">
-
-
-
-
-    	</div>
-    	<div class="box-padding-big">
-            <div class="rank_list c7">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">sss</div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div>
+        <div class="simple body">
+            <div class="box-padding-big">
+                <div class="rank_list c7">
 
 <?php
-
 //$query ="SELECT * FROM `av_model` ORDER BY av_id DESC LIMIT 1,10";
 $query = "SELECT * FROM av_model INNER JOIN mpb_rank ON av_model.av_krName = mpb_rank.av_krName ORDER BY  mpb_rank.rank_id";
 $result = mysql_query($query, $conn);
@@ -45,22 +53,22 @@ while ($row=mysql_fetch_array($result)) {
     # code...
     $profile_pic = $site.$pic.$row['av_id'].".jpg";
  ?>
-            <ul class="mactorul c7">
-                <a href="http://www.mpb.kr/actor/1361">
-                    <li class="main_img">
-                        <img src=<?=$profile_pic?> data-original=<?=$profile_pic?> class="lazy" style="display: inline;">
-                    </li>
-                <li class="main_title">
-                    <p><a href="http://www.mpb.kr/actor/1361" class="mactor"><?php echo $row['av_krName']; ?></a></p><span>데뷰 : <?php echo $row['av_debut'];?><br>출연작품 : 209개</span>
-                </li>
-                <li class="main_keyword">
-                    <a href="http://www.mpb.kr/cup/I/1">
-                        <span class="dataHref" data-href="http://www.mpb.kr/cup/I/1"><?=$row['av_bustcup']?></span></a>
-                    <a href="http://www.mpb.kr/age/32/1">
-                        <span class="dataHref" data-href="http://www.mpb.kr/age/32/1">32세</span></a>
-                </li>
-                <span class="ranking_icon"><?=$row['rank_id']?>위</span></a>
-            </ul>
+                    <ul class="simple ul">
+                        <a href="http://www.mpb.kr/actor/1361">
+                            <li class="ranklist_img">
+                                <img src=<?=$profile_pic?> data-original=<?=$profile_pic?> class="lazy" style="display: inline;">
+                            </li>
+                        <li class="ranklist_title">
+                            <p><a href="http://www.mpb.kr/actor/1361" class="mactor"><?php echo $row['av_krName']; ?></a></p><span>데뷰 : <?php echo $row['av_debut'];?><br>출연작품 : 209개</span>
+                        </li>
+                        <li class="ranklist_keyword">
+                            <a href="http://www.mpb.kr/cup/I/1">
+                                <span class="dataHref" data-href="http://www.mpb.kr/cup/I/1"><?=$row['av_bustcup']?></span></a>
+                            <a href="http://www.mpb.kr/age/32/1">
+                                <span class="dataHref" data-href="http://www.mpb.kr/age/32/1">32세</span></a>
+                        </li>
+                        <span class="ranking_icon"><?=$row['rank_id']?>위</span></a>
+                    </ul>
 <?php
 
 } // while($row=mysql_fetch_array($result))
@@ -68,12 +76,13 @@ while ($row=mysql_fetch_array($result)) {
 
 mysql_close( $conn);
  ?>
-                    </div>
-    	</div>
+                </div> <!-- <div class="rank_list c7">-->
+            </div> <!-- <div class="box-padding-big"> -->
+        </div><!-- <div class="simple body"> -->
 
 
 
-    
+
     	<div class="dark-footer">
 
     	</div>

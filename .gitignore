@@ -98,5 +98,7 @@ avtmp/
 gnu/
 mpb/
 wordpress/
+frontEndPage/
+dbset.php
 .DS_Store
 ._.DS_Store
