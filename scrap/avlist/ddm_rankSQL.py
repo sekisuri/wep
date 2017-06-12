@@ -5,7 +5,7 @@ import sys
 def InsertRank(model):
     #print(sys.stdin.encoding)
 
-    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='jong',
+    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='xxxx',
                                      db='devuser', charset ='utf8')
     cur = conn.cursor()
 

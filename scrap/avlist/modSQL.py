@@ -5,7 +5,7 @@ import sys
 def InsertProfile(model):
     #print(sys.stdin.encoding)
 
-    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='jong',
+    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='xxxx',
                                      db='devuser', charset ='utf8')
     cur = conn.cursor()
 
@@ -23,7 +23,7 @@ def InsertProfile(model):
     conn.close()
 
 def InsertTitle(title):
-    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='jong',
+    conn = pymysql.connect(host='localhost', port=3306, user='devuser', passwd='xxxx',
                                      db='devuser', charset ='utf8')
     cur = conn.cursor()
     sql = "insert into av_title ( av_id, title_name,release_date,"
