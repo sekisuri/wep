@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace CsharpConsole
 {
-    class Cat
+   
+    class ExamClass
     {
-        
-        public string Color;
-
+        public void PrintA(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+        public void PrintB(string msg)
+        {
+            Console.WriteLine(msg);
+        }
         public void Meow(string Name)
         {
             Console.WriteLine("{0} : 야옹", Name);
@@ -21,16 +27,23 @@ namespace CsharpConsole
         static void Main(string[] args)
         {
             ExamDelegate exam = new ExamDelegate();
-            DelegateType Method1 = new DelegateType(exam.DelegatePrint);
-            Method1("Hello World");
+            ExamClass cat = new ExamClass();
 
-            Cat cat = new Cat();
-            DelegateType CatMethod = new DelegateType(cat.Meow);
-            CatMethod("깜장 고양이");
+            // 옛날 델리게이트 이벤트 선언방식 C# 1.0 이하
+            exam.EventHandler += new EventDelegate(cat.PrintA);
+            exam.EventHandler += new EventDelegate(cat.PrintB);
+            exam.EventFuntion("Good!!");
 
-            DelegateType Method2 = cat.Meow;
-            CatMethod("하양 고양이");
-            
+            // 최근의 델리게이트 이벤트 선언방식 C# 2.0 이상
+            exam.EventHandler -= cat.PrintB;
+            exam.EventFuntion("Hi!");
+
+            exam.EventHandler -= cat.PrintA;
+            //exam.EventFuntion("Hello~`");
+
+            exam.EventHandler += cat.PrintA;
+            exam.EventHandler += cat.PrintA;
+            exam.EventFuntion("hello~`");
         }
     }
 }
