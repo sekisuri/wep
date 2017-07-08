@@ -8,20 +8,28 @@ namespace CsharpConsole
 {
     class Cat
     {
-        public string Name;
+        
         public string Color;
 
-        public void Meow()
+        public void Meow(string Name)
         {
             Console.WriteLine("{0} : 야옹", Name);
         }
     }
-    class MainApp
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("haha");
-            
+            ExamDelegate exam = new ExamDelegate();
+            DelegateType Method1 = new DelegateType(exam.DelegatePrint);
+            Method1("Hello World");
+
+            Cat cat = new Cat();
+            DelegateType CatMethod = new DelegateType(cat.Meow);
+            CatMethod("깜장 고양이");
+
+            DelegateType Method2 = cat.Meow;
+            CatMethod("하양 고양이");
             
         }
     }
