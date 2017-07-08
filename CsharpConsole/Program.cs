@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace CsharpConsole
 {
-    class Program
+    class Cat
+    {
+        public string Name;
+        public string Color;
+
+        public void Meow()
+        {
+            Console.WriteLine("{0} : 야옹", Name);
+        }
+    }
+    class MainApp
     {
         static void Main(string[] args)
         {
-            //MyIndexer Indexer = new MyIndexer();
-            char tmpCode = 'A';
-            int codeAscii;
-            MyIndexer Indexser = new MyIndexer();
-            for(int i=0;i < 8; i++)
-            {
-                codeAscii = (int)tmpCode + i;
-                Indexser[i] = "" + Convert.ToChar(codeAscii);
-            }
-            Indexser.Print();
-            Indexser[1] = "Hello World";
-            Indexser.Print();
+            Console.WriteLine("haha");
+            
+            
         }
     }
 }
