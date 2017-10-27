@@ -3,7 +3,7 @@ import re
 import requests
 import urllib.request
 import time
-from getNameSQL import InsertName
+from DB.SQL import InsertName
 
 
 from bs4 import BeautifulSoup
