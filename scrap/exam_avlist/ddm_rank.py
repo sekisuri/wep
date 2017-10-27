@@ -22,13 +22,13 @@ def av_profile():
 
 
     for member_tag in soup.select('.avstar_warp'):
-        rank = member_tag.find('div',class_='avrank').text
-        avname = member_tag.find('div',class_='avstar_info_b').find('b').text
-
-        avRank['rank_id'] = rank
-        avRank['krName'] = avname
-        avRank['rank_year'] = "2016"
-        avRank['rank_month'] = '10'
-        InsertRank(avRank)
+        #rank = member_tag.find('div',class_='avrank').text
+        avname = member_tag.find('div',class_='avstar_info_b').text
+        print(avname)
+        #avRank['rank_id'] = rank
+        #avRank['krName'] = avname
+        #avRank['rank_year'] = "2016"
+        #avRank['rank_month'] = '10'
+        #InsertRank(avRank)
 
 av_profile()
