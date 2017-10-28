@@ -1,11 +1,7 @@
  #-*- coding: utf-8 -*-
-import re
 import requests
 import urllib.request
-import time
 from DB.SQL import InsertName
-
-
 from bs4 import BeautifulSoup
 #url = "http://192.168.0.7/downW
 
