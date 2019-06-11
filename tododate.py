@@ -1,6 +1,13 @@
+from datetime import datetime
 
-f = open("C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo2.snippet", 'w+',encoding='UTF8')
+now = datetime.now()
+ftodo1 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo.snippet" 
+ftodo2 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo2.snippet"
+ftodo3 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo3.snippet"  
 
+f = open(ftodo2, 'w+',encoding='UTF8')
+
+settime = "%s-%s-%s" %(now.year,now.month,now.day)
 todo1 = '''<?xml version="1.0" encoding="utf-8"?>
     <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
         <CodeSnippet Format="1.0.0">
@@ -16,12 +23,12 @@ todo1 = '''<?xml version="1.0" encoding="utf-8"?>
         </Header>
             <Snippet>
                 <Code Language="csharp">
-                    <![CDATA[// sekisuri 201906 ]]>
+                    <![CDATA[// sekisuri %s ]]>
                 </Code>
             </Snippet>
         </CodeSnippet>
     </CodeSnippets>
-    '''
+    ''' % settime
 
 todo2 = '''<?xml version="1.0" encoding="utf-8"?>
     <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
@@ -29,7 +36,7 @@ todo2 = '''<?xml version="1.0" encoding="utf-8"?>
         <Header>
             <Title>다중주석</Title>
             <Shortcut>todo2</Shortcut>
-            <Description>주석용 코드조각</Description>
+            <Description>다중주석용 코드조각</Description>
             <Author>sekisuri</Author>
             <SnippetTypes>
             <SnippetType>Expansion</SnippetType>
@@ -38,17 +45,16 @@ todo2 = '''<?xml version="1.0" encoding="utf-8"?>
         </Header>
             <Snippet>
                 <Code Language="csharp">
-                    <![CDATA[// sekisuri 201906 Start <--
+                    <![CDATA[// sekisuri %s Start <--
                         
-                        // --> End sekisuri 201906 
+                        // --> End sekisuri  
                     ]]>
                 </Code>
             </Snippet>
         </CodeSnippet>
     </CodeSnippets>
-    '''
-todo3 = '''
-<?xml version="1.0" encoding="utf-8"?>
+    ''' % settime
+todo3 = '''<?xml version="1.0" encoding="utf-8"?>
     <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
         <CodeSnippet Format="1.0.0">
         <Header>
@@ -62,14 +68,18 @@ todo3 = '''
         </Header>
             <Snippet>
                 <Code Language="csharp">
-                    <![CDATA[// sekisuri 201906 Start <--
-                        // --> End sekisuri 201906 
+                    <![CDATA[
+                    /*
+                    Author : sekisuri
+                    Date : %s
+                    */
                     ]]>
                 </Code>
             </Snippet>
         </CodeSnippet>
     </CodeSnippets>
-    '''
+    ''' % settime
 
-f.write(todo2)
+#f.write(todo2)
+print(settime)
 f.close()
