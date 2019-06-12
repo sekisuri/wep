@@ -111,7 +111,7 @@ def makerun(op):
         f2 = open(ftodo2,"w+",encoding="utf-8")
         f2.write(todo2)
         f2.close()
-        f3 = open(ftodo1,"w+",encoding="utf-8")
+        f3 = open(ftodo3,"w+",encoding="utf-8")
         f3.write(todo3)
         f3.close()
     else :
