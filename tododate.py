@@ -2,9 +2,9 @@ import argparse
 from datetime import datetime
 
 now = datetime.now()
-ftodo1 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo.snippet" 
-ftodo2 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo2.snippet"
-ftodo3 = "C:\\Users\\wizar\\OneDrive\\문서\\MySnippet\\myTodo3.snippet"  
+ftodo1 = "C:\\Users\\wizar\\OneDrive\\설정\\MySnippet\\myTodo.snippet" 
+ftodo2 = "C:\\Users\\wizar\\OneDrive\\설정\\MySnippet\\myTodo2.snippet"
+ftodo3 = "C:\\Users\\wizar\\OneDrive\\설정\\MySnippet\\myTodo3.snippet"  
 
 
 settime = "%s-%s-%s" %(now.year,now.month,now.day)
@@ -73,6 +73,8 @@ todo3 = '''<?xml version="1.0" encoding="utf-8"?>
                     /*
                     Author : sekisuri
                     Date : %s
+                    Funtion : 
+                    
                     */
                     ]]>
                 </Code>
