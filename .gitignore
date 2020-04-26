@@ -100,3 +100,9 @@ ENV/
 # mypy
 .mypy_cache/
 user.py
+
+scrap/imagedown/강아지/
+scrap/imagedown/고양이/
+scrap/imagedown/곰/
+scrap/imagedown/공룡/
+scrap/imagedown/토끼
