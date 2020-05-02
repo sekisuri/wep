@@ -11,19 +11,20 @@
     <div id="app" class="app">
         <div class="head">
             <span class="title">메모 앱</span>
+            <span class="list-btn" v-if="mode !== 'list'" v-on:click="mode = 'list'">&lt;</span>
         </div>
         <div class="body">
             <div class="list" v-if="mode === 'list'">
                 <ul>
                
-                    <li v-for="m in memos">{{m.content}}</li>
+                    <li v-for="m in memos" v-on:click="open(m.id)">{{m.content}}</li>
                    
                 </ul>
             </div>
             <div class="write" v-else>
                  <textarea v-model="memo.content"></textarea>
-                 <button class="save-btn" type="button" v-on:click="save()">저장</button>
-                 <button class="cancel-btn" type="button" v-on:click="cancel()">취소</button>
+                 <button class="save-btn" type="button" v-on:click="save()" v-bind:class="{ 'full' : mode === 'write' }">저장</button>
+                 <button class="remove-btn" type="button" v-on:click="remove()" v-if="mode === 'edit'">삭제</button>
             </div>
             
             <button class="add-btn" type="button" v-on:click="write()" v-if="mode === 'list'">+</button>
@@ -45,31 +46,70 @@
                     memos: []
                 },
                 methods: {
+                    renew: function(val){
+                        return JSON.parse(JSON.stringify(val))
+                    },
+                    open: function(id){
+                        for(var i in this.memos){
+                            if(this.memos[i].id == id){
+                                this.memo = this.memos[i]
+                                break
+                            }
+                        }
+                        this.mode = 'edit'
+                    },
                     write: function(){
                         this.mode = 'write'
+                        this.memo = {
+                            id:null,
+                            content:null,
+                            regDate:null
+                        }
                     },
                     cancel:function(){
                         this.mode = 'list'
                     },
-                    save: function(){
+                    save: function () {
                         var id = this.memos.length + 1
-                        this.memos.push({                            
-                           id: id,
-                            content: this.memo.content,
-                            regDate: new Date()
-                        })
-                        this.memo.content = null
-                        this.mode = 'list'
+                        if (this.mode === 'write') {
+                            this.memos.push({
+                                id: id,
+                                content: this.memo.content,
+                                regDate: new Date()
+                            });
+                        }
+                        else if (this.mode === 'edit') {
+                            for (var i in this.memos) {
+                                if (this.memos[i].id === this.memo.id) {
+                                    this.memos[i] = this.renew(this.memo);
+                                    break;
+                                }
+                            }
+                        }
 
-                        localStorage.setItem('memos',JSON.stringify(this.memos))
+                        this.mode = 'list';
+                        localStorage.setItem('memos', JSON.stringify(this.memos));
+                    },
+                    remove: function () {
+                    if (confirm('삭제하시겠습니까?')) {
+                        for (var i in this.memos) {
+                            if (this.memos[i].id === this.memo.id) {
+                                this.memos.splice(i, 1);
+                                break;
+                            }
+                        }
+
+                        this.mode = 'list';
+                        localStorage.setItem('memos', JSON.stringify(this.memos));
+                        }
                     }
                 },
-                created: function(){
-                    var memos = localStorage.getItem("memos")
-                    if(memos){
-                        this.memos = JSON.parse(memos)
+                 created: function () {
+                        var memos = localStorage.getItem("memos")
+                        if (memos) {
+                            this.memos = JSON.parse(memos)
+                        }
                     }
-                }
             })
     </script>
 </body>
