@@ -13,12 +13,20 @@
             <span class="title">메모 앱</span>
         </div>
         <div class="body">
-            <ul>
+            <div class="list" v-if="mode === 'list'">
+                <ul>
                
-                <li v-for="m in memos">{{m.content}}</li>
-               
-            </ul>
-            <button class="add-btn" type="button">+</button>
+                    <li v-for="m in memos">{{m.content}}</li>
+                   
+                </ul>
+            </div>
+            <div class="write" v-else>
+                 <textarea v-model="memo.content"></textarea>
+                 <button class="save-btn" type="button" v-on:click="save()">저장</button>
+                 <button class="cancel-btn" type="button" v-on:click="cancel()">취소</button>
+            </div>
+            
+            <button class="add-btn" type="button" v-on:click="write()" v-if="mode === 'list'">+</button>
         </div>
     </div>
       
@@ -28,23 +36,39 @@
         var app = new Vue({
                 el: '#app',
                 data: {
-                    memos: [
-                        {
-                            id: 1,
-                            content: '메모 #1',
+                    mode: 'list',
+                    memo:{
+                        id:null,
+                        content:null,
+                        regDate:null
+                    },
+                    memos: []
+                },
+                methods: {
+                    write: function(){
+                        this.mode = 'write'
+                    },
+                    cancel:function(){
+                        this.mode = 'list'
+                    },
+                    save: function(){
+                        var id = this.memos.length + 1
+                        this.memos.push({                            
+                           id: id,
+                            content: this.memo.content,
                             regDate: new Date()
-                        },
-                        {
-                            id: 2,
-                            content: '메모 #2',
-                            regDate: new Date()
-                        },
-                        {
-                            id: 3,
-                            content: '메모 #3',
-                            regDate: new Date()
-                        }
-                    ]
+                        })
+                        this.memo.content = null
+                        this.mode = 'list'
+
+                        localStorage.setItem('memos',JSON.stringify(this.memos))
+                    }
+                },
+                created: function(){
+                    var memos = localStorage.getItem("memos")
+                    if(memos){
+                        this.memos = JSON.parse(memos)
+                    }
                 }
             })
     </script>
