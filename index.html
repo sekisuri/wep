@@ -24,16 +24,28 @@
                     <div id="lotto" class="head">
                         <span class="title">{{page}}</span>
                     </div>
-                    <div class="lottocontent" v-if="mode === 'list'">
-                        
-                        <span id="drwtNo1" class="ball_645 lrg ball1">{{lottoball[0]}}</span>
-                        <span id="drwtNo2" class="ball_645 lrg ball2">{{lottoball[1]}}</span>
-                        <span id="drwtNo3" class="ball_645 lrg ball3">{{lottoball[2]}}</span>
-                        <span id="drwtNo4" class="ball_645 lrg ball3">{{lottoball[3]}}</span>
-                        <span id="drwtNo5" class="ball_645 lrg ball3">{{lottoball[4]}}</span>
-                        <span id="drwtNo6" class="ball_645 lrg ball5">{{lottoball[5]}}</span> 
-                        
+                    <div class="body">
+                        <div class="lottocontent" v-if="mode === 'list'" v-for="l in lottomemos">
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[0]}}</span>
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[1]}}</span>
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[2]}}</span>
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[3]}}</span>
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[4]}}</span>
+                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[5]}}</span>
+                                                     
+                        </div>
+                        <div id="lottolist" class="list" v-if="mode === 'list'">
+                            <ul>
+                                <li v-for="m in lottomemos">
+                                    {{m.content}}
+                                    {{resetlotto()}}
+                                    <p></p>
+                                
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    
                     <div class="foot">
                         <button type="button" class="btn btn-primary btn-lg btn-block" v-on:click="LottoNum()">로또 생성하기</button>
                     </div>
@@ -54,15 +66,21 @@
                     show : false,
                     page: '인공지능 로또',
                     pages: ['인공지능 로또', '심리테스트'],
-                    lottoball : []
+                    lottoball : [],
+                    lottomemos :[] ,
+                    totalnum : 0
+
                 },
                 methods:{
                     LottoNum : function(){
                         var arrNumber = new Array();
+                        console.log("로또 함수 ")
                         for(var i=0;i<6;i++){
                             arrNumber[i] = Math.floor(Math.random() * 45) + 1
-                            for(var j=0;j<i;j++){ // 중복을 피하기 위해
-                                if(arrNumber[i] == arrNumber[j]){
+                            for(var j=0;j<i;j++)
+                            { // 중복을 피하기 위해
+                                if(arrNumber[i] == arrNumber[j])
+                                {
                                     i--;
                                 }
                             }
@@ -71,10 +89,26 @@
                         arrNumber.sort(function(a,b){
                             return a-b
                         })
-                        for(var i=0;i < arrNumber.length ; i++){
-                            this.lottoball.push(arrNumber[i]);
+
+                        for(var i=0;i < arrNumber.length ; i++)
+                        {
+                            this.lottoball.push(arrNumber[i])
                         }
+                        
+                        
+                        this.lottomemos.push({
+                            id:3,
+                            content : this.lottoball,
+                            regDate : new Date()
+
+                        })
+                        //var balls = this.lottoball[0]
+                        this.totalnum++
+                        
                         this.mode = 'list'
+                    },
+                    resetlotto : function(){
+                        this.lottoball = []
                     }
                 }
             });
