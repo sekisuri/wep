@@ -26,12 +26,12 @@
                     </div>
                     <div class="body">
                         <div class="lottocontent" v-if="mode === 'list'" v-for="l in lottomemos">
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[0]}}</span>
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[1]}}</span>
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[2]}}</span>
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[3]}}</span>
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[4]}}</span>
-                                <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[5]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[0]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball2">{{l.content[1]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball3">{{l.content[2]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball3">{{l.content[3]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball3">{{l.content[4]}}</span>
+                            <span id="drwtNo1" class="ball_645 lrg ball5">{{l.content[5]}}</span>
                                                      
                         </div>
                         <div id="lottolist" class="list" v-if="mode === 'list'">
@@ -59,6 +59,11 @@
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+       
+        Vue.component('simple-counter', {
+            
+            
+        })
          var app = new Vue({
                 el: '#justfun',
                 data: {
