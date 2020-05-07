@@ -21,7 +21,12 @@
     padding: 30px;
     line-height: 0;
 }
-
+.body {
+    width: 100%;
+    margin-top : 10px;
+    margin-left: 30%;
+    margin-right: 50%;
+}
 .app > .body ul {
     list-style: none;
     margin: 0;
@@ -84,6 +89,11 @@
     float: right;
 }
 
+.lottocontent{
+    margin-top : 10px;
+}
 .section {
     margin-top: 30%;
+    width: 100;
+    position: relative;
 }
