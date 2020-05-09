@@ -25,7 +25,7 @@
                         <span class="title">{{page}}</span>
                     </div>
                     <div class="body">
-                        <div class="lottocontent" v-if="mode === 'list'" v-for="l in lottomemos">
+                        <div class="lottocontent" v-for="l in lottomemos" v-bind:id="'list-' + l.id" v-if="l.id < 7" >
                             <span id="drwtNo1" class="ball_645 lrg ball1">{{l.content[0]}}</span>
                             <span id="drwtNo1" class="ball_645 lrg ball2">{{l.content[1]}}</span>
                             <span id="drwtNo1" class="ball_645 lrg ball3">{{l.content[2]}}</span>
@@ -73,7 +73,7 @@
                     pages: ['인공지능 로또', '심리테스트'],
                     lottoball : [],
                     lottomemos :[] ,
-                    totalnum : 0
+                    totalnum : 1
 
                 },
                 methods:{
@@ -102,13 +102,14 @@
                         
                         
                         this.lottomemos.push({
-                            id:3,
+                            id: this.totalnum,
                             content : this.lottoball,
                             regDate : new Date()
 
                         })
                         //var balls = this.lottoball[0]
                         this.totalnum++
+                        if(to)
                         
                         this.mode = 'list'
                     },
@@ -118,9 +119,10 @@
                 }
             });
     </script>
-    <!--
+    
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!--    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     -->
     
