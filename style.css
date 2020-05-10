@@ -1,7 +1,7 @@
 html,body { margin:0;padding:0; }
 div, nav, iframe, p, span, img { margin:0;padding:0;position:relative; }
 #container {
-	width:1164px;
+	width:100%;
 }
 #container nav {
 	display:inline-block;
