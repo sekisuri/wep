@@ -7,7 +7,7 @@ class Kiwoom(QAxWidget):
         super().__init__()
         print("Kiwoom 클래스")
 
-        self.login_event_loop = None
+        
         ## 변수모음
         self.account_num = None
 
@@ -15,13 +15,16 @@ class Kiwoom(QAxWidget):
        # self.login_event_loop = QEventLoop() #로그인 요청용 이벤트루프
        # self.detail_account_info_event_loop = QEventLoop() # 예수금 요청용 이벤트루프
        # self.calculator_event_loop = QEventLoop()
+        self.login_event_loop = None
         self.detail_account_info_event_loop = None # 예수금 요청용 이벤트루프
+        self.detail_account_info_event_loop2 = None # 예수금 요청용 이벤트루프
         #########################################
         self.get_ocx_instance()
         self.event_slots()
         self.signal_login_commConnect()
         self.get_account_info()
         self.detail_account_info()
+        self.detail_account_mystock()
 
     def get_ocx_instance(self):
         self.setControl("KHOPENAPI.KHOpenAPICtrl.1")
@@ -63,6 +66,16 @@ class Kiwoom(QAxWidget):
 
         self.detail_account_info_event_loop = QEventLoop()
         self.detail_account_info_event_loop.exec_()
+     
+    def detail_account_mystock(self, sPrevNext = "0"):
+        print("계좌평가 잔고내역 요청")       
+        self.dynamicCall("SetInputValue(QString, QString)", "계좌번호", self.account_num)
+        self.dynamicCall("SetInputValue(QString, QString)", "비밀번호", "0000")
+        self.dynamicCall("SetInputValue(QString, QString)", "비밀번호입력매체구분", "00")
+        self.dynamicCall("SetInputValue(QString, QString)", "조회구분", "1")
+        self.dynamicCall("CommRqData(QString, QString, int, QString)", "계좌평가잔고내역요청", "opw00018", sPrevNext, "2000")
+        self.detail_account_info_event_loop2 = QEventLoop()
+        self.detail_account_info_event_loop2.exec_()
     
     def trdata_slot(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
         '''
@@ -79,3 +92,12 @@ class Kiwoom(QAxWidget):
             output_deposit = self.dynamicCall("GetCommData(QString, QString, int, QString)", sTrCode, sRQName, 0, "출금가능금액")
             print("출금가능금액 %s" % int(output_deposit))
             self.detail_account_info_event_loop.exit()
+        
+        elif sRQName == "계좌평가잔고내역요청":
+            total_buy_money = self.dynamicCall("GetCommData(QString, QString, int, QString)", sTrCode, sRQName, 0, "총매입금액")
+            self.total_buy_money = int(total_buy_money)
+            print("총매입금액 %s" % self.total_buy_money)
+            total_profit_loss_rate = self.dynamicCall("GetCommData(QString, QString, int, QString)", sTrCode, sRQName, 0, "총수익률(%)")
+            total_profit_loss_rate_result = float(total_profit_loss_rate)
+            print("총수익율 (%s) : %s" % ("%",total_profit_loss_rate_result))
+            self.detail_account_info_event_loop2.exit()
