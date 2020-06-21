@@ -10,6 +10,13 @@ class Kiwoom(QAxWidget):
         self.login_event_loop = None
         ## 변수모음
         self.account_num = None
+
+        ####### event loop를 실행하기 위한 변수모음
+       # self.login_event_loop = QEventLoop() #로그인 요청용 이벤트루프
+       # self.detail_account_info_event_loop = QEventLoop() # 예수금 요청용 이벤트루프
+       # self.calculator_event_loop = QEventLoop()
+        self.detail_account_info_event_loop = None # 예수금 요청용 이벤트루프
+        #########################################
         self.get_ocx_instance()
         self.event_slots()
         self.signal_login_commConnect()
@@ -53,6 +60,9 @@ class Kiwoom(QAxWidget):
         self.dynamicCall("SetInputValue(String,String","비밀번호입력매체구분","00")
         self.dynamicCall("SetInputValue(String,String","조회구분","2")
         self.dynamicCall("CommRqData(String,String, int, String)","예수금상세현황요청","opw00001","0","2000")
+
+        self.detail_account_info_event_loop = QEventLoop()
+        self.detail_account_info_event_loop.exec_()
     
     def trdata_slot(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
         '''
@@ -68,3 +78,4 @@ class Kiwoom(QAxWidget):
             print("예수금 %s" % int(deposit))
             output_deposit = self.dynamicCall("GetCommData(QString, QString, int, QString)", sTrCode, sRQName, 0, "출금가능금액")
             print("출금가능금액 %s" % int(output_deposit))
+            self.detail_account_info_event_loop.exit()
