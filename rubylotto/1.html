@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kr">
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="cs.css">
+    </head>
+    <body>
+        <div id="popup645paper" class="popup-645paper" v-if="mode === 'list'">
+            <h2>인터넷 로또 6/45 구매번호</h2>
+            <div class="date-info">
+                <h3><span>복권 로또 645</span><strong>제 910회</strong></h3>
+                <ul>
+                    <li><span>발 행 일</span> : 2020/05/09 (토) 17:49:12</li>
+                    <li><span>추 첨 일</span> : 2020/05/09</li>
+                    <li><span>지급 기한</span> : 2021/05/10</li>
+                </ul>                              
+            </div>
+            <div class="selected">
+                <ul>
+                    
+                    <li>                                        
+                        <div class="nums" v-for="l in lottomemos" v-if="l.id < 6">                                           
+                            <span><span>{{l.content[0]}}</span></span>                                       
+                            <span><span>{{l.content[1]}}</span></span>               
+                            <span><span>{{l.content[2]}}</span></span>                  
+                            <span><span>{{l.content[3]}}</span></span>       
+                            <span><span>{{l.content[4]}}</span></span>
+                            <span><span>{{l.content[5]}}</span></span>       
+                            {{resetlotto()}}               
+                        </div>
+                    </li>
+                    
+                </ul>
+                        
+            </div>               
+        </div>
+                
+                <div class="total">
+            
+            
+            
+                    <strong>합계</strong><strong><span class="won">\</span>1,000</strong>
+            
+            
+                </div>
+            </div>
+            <div class="btns">
+                <!-- <a class="btn_common mid" href="#" onclick="print(); return false;" title="새창 열림">인쇄</a> -->
+                <a class="btn_common mid" href="#" onclick="self.close()">닫기</a>
+            </div>
+        </div>
+    </body>
+</html>

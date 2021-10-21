@@ -1,0 +1,308 @@
+html,body { margin:0;padding:0; }
+div, nav, iframe, p, span, img { margin:0;padding:0;position:relative; }
+#container {
+	width:100%;
+}
+#container nav {
+	display:inline-block;
+	width:264px;
+	height:645px;
+	background:url('./web/menuBackground.jpg');
+}
+#container nav ul {
+	position:absolute;
+	left:14px;top:93px;width:236px;height:460px;
+	margin:0;padding:0;
+	font-size:0;
+}
+#container nav ul:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#container nav ul li {
+    position:relative;
+	list-style:none;
+	display:inline-block;
+	float:left;
+	width:118px;
+	height:88px;
+	margin:0;padding:0;
+}
+#container nav ul li a {
+	display:block;
+}
+#container nav ul li img {
+	border:none;
+    vertical-align:middle;
+}
+#container nav ul li img.sampleMark {
+    position:absolute;
+    top:3px;left:3px;
+    z-index:2;
+}
+#container nav ul li.check_text input[type="checkbox"] {
+	position:absolute; 
+	left:-999em; 
+	width:1px; 
+	height:1px; 
+	font-size:1px; 
+	line-height:1px; 
+	overflow:hidden; 
+	opacity:0;
+}
+#container nav ul li.check_text input[type="checkbox"] + label {
+	position:absolute; 
+	left:0;
+	bottom:3px;
+	display:inline-block; 
+	vertical-align:bottom;
+	width:70px; 
+	height:20px; 
+	background:url(/game_res/web/menu/bg_chk_game_off.png) 50% 50% no-repeat;
+	cursor:pointer;
+}
+#container nav ul li.check_text input[type="checkbox"] + label span {
+	position:absolute; 
+	left:-999em; 
+	width:1px; 
+	height:1px; 
+	font-size:1px; 
+	line-height:1px; 
+	overflow:hidden; 
+	opacity:0;
+}
+#container nav ul li.check_text input[type="checkbox"]:checked + label {
+	background:url(/game_res/web/menu/bg_chk_game_on.png) 50% 50% no-repeat;
+}
+#container nav div.purchase {
+    position:absolute;
+    left:0;bottom:5px;
+    width:100%;height:60px;
+    text-align:center;
+    color:#c1c3c4;
+    font-family:'SpoqaHanSans';
+}
+#container nav div.purchase p {line-height:20px}
+#container nav div.purchase a {
+    padding:0 5px;
+    font-size:18px;
+    text-decoration:none;
+    color:#c1c3c4;
+}
+
+#container nav div.purchase a img {
+    border:none;
+}
+
+#container nav div.purchase span.display {
+    font-size:20px;
+    color:#f8f73d;
+}
+
+#container nav div.connect_time {
+	position:absolute; 
+	left:15px; 
+	bottom:68px; 
+	width:234px; 
+	height:33px; 
+	padding:2px 3px 4px; 
+	line-height:27px; 
+	text-align:center; 
+	font-size:0; 
+	background:url(/game_res/web/menu/bg_connect_time.png) 0 0 no-repeat;
+}
+
+#container nav div.connect_time strong {
+	position:absolute; 
+	left:-999em; 
+	width:1px; 
+	height:1px; 
+	font-size:1px; 
+	line-height:1px; 
+	overflow:hidden; 
+	opacity:0;
+}
+
+#container nav div.connect_time span.timer {
+	display:inline-block; 
+	vertical-align:middle; 
+	margin-left:88px; 
+	font-weight:700; 
+	font-size:14px; 
+	color:#ff914f; 
+	text-shadow:0px 0px 2px #000;
+}
+
+.popup_wrap {
+	position:absolute; 
+	top:0; left:264px; 
+	z-index:1; 
+	width:calc(100% - 264px); 
+	height:645px; 
+	text-align:center; 
+	background:rgba(0,0,0,0.5);
+}
+
+.popup_wrap:before {
+	content:""; 
+	display:inline-block; 
+	vertical-align:middle; 
+	height:100%; 
+	margin-left:-6px;
+}
+
+.popup_wrap .popup_section {
+	display:inline-block; 
+	vertical-align:middle;
+}
+
+.popup_wrap .popup_section .inner {
+	width:500px; 
+	padding:30px; 
+	text-align:left; 
+	border-radius:3px; 
+	background:#fff; 
+	box-sizing:border-box;
+}
+
+.popup_wrap .popup_section .inner .head {
+	position:relative; 
+	padding-bottom:15px; 
+	border-bottom:1px solid #ddd;
+}
+
+.popup_wrap .popup_section .inner .head .tit {
+	display:inline-block; 
+	vertical-align:top; 
+	font-size:16px; 
+	color:#2d2d2d;
+}
+
+.popup_wrap .popup_section .inner .head a.close {
+	position:absolute; 
+	top:0; 
+	right:0; 
+	width:16px; 
+	height:16px; 
+	background:url(/game_res/web/menu/btn_popup_close.png) 0 0 no-repeat;
+}
+
+.popup_wrap .popup_section .inner .head a.close span {
+	position:absolute; 
+	left:-999em; 
+	width:1px;
+	height:1px; 
+	font-size:1px; 
+	line-height:1px; 
+	overflow:hidden; 
+	opacity:0;
+}
+
+.popup_wrap .popup_section .inner .content {
+	padding-top:30px;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc {
+	margin-bottom:20px;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc:after {
+	content:""; 
+	display:block; 
+	clear:both;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc p {
+	float:left; 
+	width:calc(100% - 158px); 
+	line-height:20px; 
+	font-size:14px; 
+	color:#707070; 
+	word-wrap:break-word; 
+	word-break:keep-all;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc p strong {
+	font-weight:400; 
+	color:#d43301;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc .btn_counsel {
+	float:right; 
+	display:inline-block; 
+	width:138px; 
+	padding:12px 0; 
+	text-align:center; 
+	line-height:16px; 
+	font-size:13px; 
+	color:#fff; 
+	text-decoration:none; 
+	background:#0a857e;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc .btn_counsel span {
+	display:inline-block; 
+	padding-top:40px; 
+	background:url(/game_res/web/menu/btn_popup_counsel.png) 50% 0 no-repeat;
+}
+
+
+.popup_wrap .popup_section .inner .content .pop_desc .btn_highPrize {
+	float:right; 
+	display:inline-block; 
+	width:138px; 
+	padding:12px 0; 
+	text-align:center; 
+	line-height:16px; 
+	font-size:13px; 
+	color:#fff; 
+	text-decoration:none; 
+	background:#0a857e;
+}
+
+.popup_wrap .popup_section .inner .content .pop_desc .btn_highPrize span {
+	display:inline-block; 
+	padding-top:25px; 
+	padding-bottom:25px; 
+}
+
+.popup_wrap .popup_section .inner .content .video_container {
+	position:relative;
+	height:0; 
+	padding-bottom:56.25%;
+	font-size:1px; 
+	line-height:0;
+}
+
+.popup_wrap .popup_section .inner .content .video_container iframe {
+	position:absolute; 
+	left:0; 
+	top:0; 
+	width:100%; 
+	height:100%; 
+	border:0;
+}
+
+.popup_wrap .popup_section .inner .content .btns_submit {
+	display:block; 
+	margin-top:20px; 
+	text-align:center;
+}
+
+.popup_wrap .popup_section .inner .content .btns_submit a.btn_cancel.close {
+	display:inline-block; 
+	width:85px; 
+	height:30px; 
+	line-height:31px; 
+	text-align:center; 
+	font-size:13px; 
+	color:#fff; 
+	text-decoration:none; 
+	background:url(/game_res/web/menu/btn_popup_cancel.png) 50% 0 no-repeat; 
+	box-shadow:1px 1px 3px #c5c5c5;
+}
+
+#container iframe {
+	display:inline-block;
+}
