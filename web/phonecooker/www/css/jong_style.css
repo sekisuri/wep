@@ -1,0 +1,238 @@
+@charset "utf-8";
+ 
+@font-face {
+	font-family:NanumGothic;
+	src:url('../font/NANUMGOTHICBOLD.TTF');
+	src:local('☺'), 
+	     url('../font/NANUMGOTHICBOLD.TTF');
+}
+
+body { 
+    background-color: #ffffff; /* Background color */
+    color: #222;          /* Foreground color used for text */
+    font-family: NanumGothic; 
+    margin: 0;             /* Amount of negative space around the outside of the body */
+    padding: 0;               /* Amount of negative space around the inside of the body */
+   /*background-image:url('../images/bg.png');*/
+}
+a {
+   text-decoration: none;
+}
+button a{
+     text-decoration: none;
+
+}
+.openingBox .Text {
+    margin-top: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10;
+
+}
+
+.total_incentive {
+  font-size: 6px;
+}
+header {
+	
+}
+#modal_font {
+  font-size: 10px;
+}
+.cbody {
+    margin:0 auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float:center;
+    text-align:center;
+	
+}
+
+.main_alert {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:90%;
+    height:90%;
+    margin-top:0%;
+    margin-bottom:5%;
+    background-color: #eeeeee;
+   /* border: 5px solid #379d38;*/
+    /*background-image:url('../images/content_bg.png');*/
+}
+.main_contents {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:90%;
+    height:90%;
+    margin-top:25%;
+    margin-bottom:5%;
+    background-color: #eeeeee;
+   /* border: 5px solid #379d38;*/
+    /*background-image:url('../images/content_bg.png');*/
+}
+.main_contents .title {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:80%;
+    height:80%;
+    margin-top:0%;
+    margin-bottom:5%;
+}
+.contents {
+     margin:0 auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:80%;
+    height:80%;
+    margin-top:35%;
+    margin-bottom:5%;
+    border: 5px solid #eeeeee;
+    background-color: #eeeeee;
+
+   /* background-image:url('../images/content_bg.png');*/
+}
+.consult_body {
+     margin: auto;
+    display: block;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width:95%;
+    height:95%;
+    margin-top:15%;
+    margin-bottom:5%;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+
+   /* background-image:url('../images/content_bg.png');*/
+}
+
+.btnImage{
+    
+    padding: 10px;
+}
+.content_padding{
+  padding:10px;
+}
+
+
+.closeButton {
+	margin: 0;
+    padding: 0;   
+   	text-align: center;
+    -webkit-border-image: url('images/close_button.png') 0 8 0 8;
+}
+.closeButton a{
+	height: 30px;
+  	font-weight: bold;
+    color: white;
+    text-shadow: rgba (0,0,0,0.6) 0px -1px 1px;
+    line-height: 28px;
+    border-width: 0 8px 0 8px;
+	    text-decoration:none;	
+}
+#header { 
+    margin: 0;
+    padding: 0;
+} 
+
+
+#header button{
+  width: 100%;
+  float: left;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 3px solid #02122d;
+  border-left: 3px solid #02122d;
+  border-bottom: 3px solid #02122d; 
+  border-right: 3px solid #02122d;
+  -webkit-border-image: url(images/button_msn.png) 0 8 0 8;
+}
+#header div.rightButton {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 50px;  
+    height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+     border: 1px solid #dddbdb;
+    font-weight: bold;
+    text-align: center;
+    color: #222325;
+    line-height: 30px;
+}
+
+#header div.leftButton {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    width: 50px;  
+    height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+     border: 1px solid #dddbdb;
+    font-weight: bold;
+    text-align: center;
+    color: #222325;
+    line-height: 30px;
+}
+
+#header div.pressed {
+    background-color: #dddbdb;
+}
+#phone_modelcode{
+  text-align: center;;
+text-shadow: 0px 1px 1px #fff;
+height:10%;
+}
+#content{
+    float:center;
+    text-align:center;
+}
+#time{
+	display:none;
+}
+
+#footer {
+    display: none;
+}
+
+
+
+#header img{
+   width: 100%;
+   height: 30%;
+   float: center; 
+
+}
+.logo_img {
+  position: absolute;
+  top: 1%;
+  left: 25%;
+  right:50%;
+  height: 15%;
+  width:50%;
+  height:25%;
+}
+
+#phone_image {
+   margin-top:15%;
+}
