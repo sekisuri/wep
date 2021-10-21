@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul style="list-style:none">
+            <template v-for="item in items">
+                <li><img :src=item.image alt="" srcset=""></li>
+                <li>{{item.title}}</li>
+            </template>
+            
+            
+                
+        </ul>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data(){
+                return{
+                    items: [
+                        {
+                            id:1,
+                            image:'https://picsum.photos/210/118/?image=1',
+                            title: '컴퓨터'
+                            
+                        },
+                        {
+                            id:2,
+                            image:'https://picsum.photos/210/118/?image=100',
+                            title: '해변'
+                        },
+                        {
+                            id:3,
+                            image:'https://picsum.photos/210/118/?image=160',
+                            title: '휴대폰'
+                        },
+                        {
+                            id:4,
+                            image:'https://picsum.photos/210/118/?image=200',
+                            title: '황소'
+                        },
+                    ]
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

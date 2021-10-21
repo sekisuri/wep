@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+</head>
+
+<body>
+   <div id="app">
+       <input type="text" v-model="animal" v-on:keyup.enter="capture()">
+       <ul>
+           <li v-for="a in animals">
+               {{a}}
+           </li>
+       </ul>
+       <button v-on:click="add()">함수실행 버튼</button>
+       <ul>
+           <li v-for="n in numbers">
+               {{n}}
+           </li>
+       </ul>
+       <h1 v-if="visible">나는 보입니다.</h1>
+       <button v-on:click="visible = !visible">토글버튼</button>
+    <button v-on:click="alert('버튼을 클릭했습니다.')">버튼</button>  
+    <button v-on:dblclick="alert('더블 버튼을 클릭했습니다.')">더블버튼</button>
+ </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+       var app = new Vue({
+           el: '#app',
+           data:{
+               visible : true,
+               numbers : [1,2,3,4,5],
+               animal:null,
+               animals:['lion','tiger','dog','cat','eagle']
+           },
+           methods:{
+               alert:function(msg){
+                   alert(msg)
+               },
+               add: function(){
+                   var lastNum = this.numbers[this.numbers.length - 1]
+                   lastNum += 1
+                    this.numbers.push(lastNum)
+               },
+               capture: function(){
+                   if(this.animal){
+                       this.animals.push(this.animal)
+                   }
+               }
+           }
+       })
+    </script>
+
+  
+</body>
+
+</html>
